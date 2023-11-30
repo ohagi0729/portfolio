@@ -1,8 +1,8 @@
-# ねころぐ
+# ネコログ
 ​
 ## サイト概要
 ### サイトテーマ
-飼い猫の写真を文章と共に投稿したり、投稿を検索したりできるSNS
+猫に関する情報を写真と文章で投稿したり、投稿を検索したりできるSNS
 ​
 ### テーマを選んだ理由
 私自身が猫を飼っており、日常的にネット上でかわいらしい猫の画像や情報を楽しんでいます。
@@ -24,11 +24,11 @@
 後ほど提出予定
 ​
 ## 開発環境
-・OS：Linux(CentOS)
-・言語：HTML,CSS,JavaScript,Ruby,SQL
-・フレームワーク：Ruby on Rails
-・JSライブラリ：jQuery
-・IDE：Cloud9
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 ​
 ## 使用素材
 未定
