@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+root to: 'public/homes#top'
+get '/search', to: 'search#action_name', as: 'search'
+
 # 管理者用
 # URL /admin/sign_in ...
 devise_for :admin, controllers: {
@@ -18,7 +22,7 @@ devise_for :customers, controllers: {
 }
 
   namespace :public do
-    root 'homes#top'
+    #root 'homes#top'
 
   resources :posts, only: [:new,:create,:index,:show,:destroy] do
     resources :posts_comments, only: [:create, :destroy]
