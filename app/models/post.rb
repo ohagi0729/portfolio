@@ -4,7 +4,6 @@ class Post < ApplicationRecord
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
-  validates :shop_name, presence: true
   validates :image, presence: true
 
   def get_image
@@ -21,15 +20,15 @@ class Post < ApplicationRecord
 
   def self.looks(search, word)
     if search == "perfect_match"
-      @book = Book.where("title LIKE?","#{word}")
+      @post = Post.where("title LIKE?","#{word}")
     elsif search == "forward_match"
-      @book = Book.where("title LIKE?","#{word}%")
+      @post = Post.where("title LIKE?","#{word}%")
     elsif search == "backward_match"
-      @book = Book.where("title LIKE?","%#{word}")
+      @post = Post.where("title LIKE?","%#{word}")
     elsif search == "partial_match"
-      @book = Book.where("title LIKE?","%#{word}%")
+      @post = Post.where("title LIKE?","%#{word}%")
     else
-      @book = Book.all
+      @post = Post.all
     end
   end
 end

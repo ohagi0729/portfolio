@@ -24,7 +24,7 @@ devise_for :customers, controllers: {
   namespace :public do
     #root 'homes#top'
 
-  resources :posts, only: [:new,:create,:index,:show,:destroy] do
+  resources :posts, only: [:new, :create, :index, :show, :destroy] do
     resources :posts_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end

@@ -1,0 +1,10 @@
+
+  <% posts.each do |post| %>
+    <%= link_to public_post_path(post.id) do %>
+    <%= image_tag post.image, class: "card-img-top" %>
+  <% end %>
+  <%#= image_tag post.customer.get_profile(100,100) %>
+    <p><%= post.caption %></p>
+    <span>By <%= post.customer.name %> ｜ </span>
+    <span><%= link_to "#{post.post_comments.count} コメント", public_post_path(post.id) %></span>
+  <% end %>
