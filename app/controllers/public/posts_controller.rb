@@ -1,11 +1,11 @@
 class Public::PostsController < ApplicationController
   before_action :authenticate_customer!, only: [:create]
+  before_action :ensure_correct_customer, only: [:edit, :update]
 
   def new
     @post = Post.new
   end
 
-  # 投稿データの保存
   def create
     @post = Post.new(post_params)
     @post.customer_id = current_customer.id
@@ -23,7 +23,7 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @post = PostComment.new
+    @post_comment = PostComment.new
   end
 
   def destroy
@@ -32,10 +32,15 @@ class Public::PostsController < ApplicationController
     redirect_to posts_path
   end
 
-  # 投稿データのストロングパラメータ
   private
 
   def post_params
     params.require(:post).permit(:image, :caption)
   end
+
+  def customer_params
+    params.require(:customer).permit(:name, :profile_image, :introduction)
+  end
+
 end
+

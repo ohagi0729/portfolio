@@ -1,8 +1,9 @@
 class Post < ApplicationRecord
   has_one_attached :image
+  has_one_attached :profile_image
   belongs_to :customer
-  has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :post_comments, dependent: :destroy
 
   validates :image, presence: true
 
@@ -14,8 +15,12 @@ class Post < ApplicationRecord
     image
   end
 
-  def favorited_by?(user)
-    favorites.exists?(user_id: user.id)
+  def get_profile_image
+    profile_image.attached? ? profile_image : 'no_image.jpg'
+  end
+
+  def favorited_by?(customer)
+    favorites.exists?(customer_id: customer.id)
   end
 
   def self.looks(search, word)

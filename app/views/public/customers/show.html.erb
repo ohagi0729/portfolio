@@ -1,2 +1,33 @@
-<h1>Public::Customers#show</h1>
-<p>Find me in app/views/public/customers/show.html.erb</p>
+<h2>User info</h2>
+<table class='table'>
+  <tr><%= image_tag @customer.get_profile_image, size: '100x100', fit: 'cover' %></tr>
+  <tr>
+	  <th>name</th>
+	  <th><%= @customer.name %></th>
+  </tr>
+  <tr>
+	  <th>introduction</th>
+	  <th><%= @customer.introduction %></th>
+  </tr>
+  <tr>
+    <th>follows</th>
+    <th><%#= link_to customer.following_customers.count, customer_followings_path(customer) %></th>
+  </tr>
+  <tr>
+    <th>followers</th>
+    <th><%#= link_to customer.follower_customers.count, customer_followers_path(customer) %></th>
+  </tr>
+</table>
+
+
+<% if current_customer && current_customer == @customer %>
+  <%= link_to "プロフィールを編集", edit_public_customer_path(current_customer), class: "btn btn-outline-secondary btn-block" %>
+<% end %>
+
+
+<% if @posts.any? %>
+  <h2>投稿一覧</h2>
+  <%= render partial: 'public/posts/list', locals: { posts: @posts } %>
+<% else %>
+  <p>まだ投稿がありません。</p>
+<% end %>

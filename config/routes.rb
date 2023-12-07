@@ -24,9 +24,13 @@ devise_for :customers, controllers: {
   namespace :public do
     #root 'homes#top'
 
+  devise_scope :customer do
+    post "customers/guest_sign_in", to: "customers/sessions#guest_sign_in"
+  end
+
   resources :posts, only: [:new, :create, :index, :show, :destroy] do
-    resources :posts_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
+    resources :posts_comments, only: [:create, :destroy]
   end
   resources :customers, only: [:index,:show,:edit,:update] do
     resource :relationships, only: [:create, :destroy]
