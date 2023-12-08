@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
-    <title>Portfolio</title>
+    <title>NEKOLOG</title>
+    <meta charset="UTF-8"　/>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="css/style.css" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -15,7 +16,10 @@
     <main>
       <%= yield %>
     </main>
-    
+<a href="#" id="top-btn">TOP</a>
     <%= render "layouts/footer" %>
+
+    <script src="app/javascript/jquery.min.js"></script>
+    <script src="app/javascript/script.js"></script>
   </body>
 </html>

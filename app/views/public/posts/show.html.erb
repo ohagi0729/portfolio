@@ -1,14 +1,27 @@
 <div>
   <%= image_tag @post.get_image %>
   <p>説明：<%= @post.caption %></p>
+  <%= link_to public_customer_path(current_customer) do %>
+    <%= image_tag current_customer.get_profile_image, size: '50x50' %>
+  <% end %>
   <p>ユーザーネーム：<%= @post.customer.name %></p>
   <p>投稿日：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
 </div>
 
-<%= render 'favorite', post: @post %>
+<div id="favorite_btn_<%= @post.id %>">
+  <%= render 'favorite', post: @post %>
+</div>
+
+<p>コメント件数：<%= @post.post_comments.count %></p>
 
 <div>
-  <p>コメント件数：<%= @post.post_comments.count %></p>
+  <%= form_with model: [@post, @post_comment], url: public_post_posts_comment_path(@post) do |f| %>
+    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
+    <%= f.submit "送信する" %>
+  <% end %>
+</div>
+
+<div>
   <% @post.post_comments.each do |post_comment| %>
     <p><%= image_tag post_comment.customer.get_profile_image(100,100) %></p>
     <%= post_comment.customer.name %>
@@ -16,11 +29,5 @@
     <% if post_comment.user == current_user %>
       <%= link_to "削除", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete %>
     <% end %>
-  <% end %>
-</div>
-<div>
-  <%= form_with model: [@post, @post_comment] do |f| %>
-    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
-    <%= f.submit "送信する" %>
   <% end %>
 </div>

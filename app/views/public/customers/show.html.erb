@@ -1,6 +1,6 @@
 <h2>User info</h2>
 <table class='table'>
-  <tr><%= image_tag @customer.get_profile_image, size: '100x100', fit: 'cover' %></tr>
+  <tr><%= image_tag current_customer.get_profile_image, size: '100x100' %></tr>
   <tr>
 	  <th>name</th>
 	  <th><%= @customer.name %></th>

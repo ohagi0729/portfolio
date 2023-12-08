@@ -1,15 +1,13 @@
+<% posts.each do |post| %>
+  <%= link_to public_post_path(post.id) do %>
+    <%= image_tag post.image %>
+  <% end %>
+  <%= image_tag current_customer.get_profile_image, size: '50x50' %>
+  <p><%= post.caption %></p>
+  <span>By <%= post.customer.name %> ｜ </span>
+  <span><%= link_to "#{post.post_comments.count} コメント", public_post_path(post.id) %></span>
 
-  <% posts.each do |post| %>
-    <%= link_to public_post_path(post.id) do %>
-      <%= image_tag post.image %>
-    <% end %>
-  <% if @customer && @customer.get_profile_image.attached? %>
-    <%= image_tag @customer.get_profile_image, size: '100x100', fit: 'cover' %>
-  <% else %>
-    <%= image_tag 'no_image.jpg', size: '100x100', fit: 'cover' %>
-  <% end %>
-    <p><%= post.caption %></p>
-    <span>By <%= post.customer.name %> ｜ </span>
-    <span><%= link_to "#{post.post_comments.count} コメント", public_post_path(post.id) %></span>
-    <%#= render 'favorite', post: @post %>
-  <% end %>
+  <div id="favorite_btn_<%= post.id %>">
+    <%= render 'favorite', post: post %>
+  </div>
+<% end %>
