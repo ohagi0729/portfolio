@@ -10,23 +10,31 @@ class Customer < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :post_comments, dependent: :destroy
 
-  #　フォローした、された時の関係
-  has_many :followers, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
-  has_many :followeds, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
-  # 一覧画面で使う
-  has_many :following_customer, through: :followers, source: :followed
-  has_many :follower_customer, through: :followeds, source: :follower
-  #　フォローしたときの処理
-  def follow(customer_id)
-    followers.create(followed_id: customer_id)
+  # フォローしている関連付け
+  has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+
+  # フォローされている関連付け
+  has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+
+  # フォローしているユーザーを取得
+  has_many :followings, through: :active_relationships, source: :followed
+
+  # フォロワーを取得
+  has_many :followers, through: :passive_relationships, source: :follower
+
+  # 指定したユーザーをフォローする
+  def follow(user)
+    active_relationships.create(followed_id: user.id)
   end
-  #　フォローを外すときの処理
-  def unfollow(customer_id)
-    followers.find_by(followed_id: customer_id).destroy
+
+  # 指定したユーザーのフォローを解除する
+  def unfollow(user)
+    active_relationships.find_by(followed_id: user.id).destroy
   end
-  #フォローしていればtrueを返す
-  def following?(customer)
-    following_customers.include?(customer)
+
+  # 指定したユーザーをフォローしているかどうかを判定
+  def following?(user)
+    followings.include?(user)
   end
 
   enum is_active: {active: true, non_active: false}

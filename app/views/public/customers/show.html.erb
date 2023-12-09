@@ -1,28 +1,21 @@
-<h2>User info</h2>
-<table class='table'>
-  <tr><%= image_tag current_customer.get_profile_image, size: '100x100' %></tr>
-  <tr>
-	  <th>name</th>
-	  <th><%= @customer.name %></th>
-  </tr>
-  <tr>
-	  <th>introduction</th>
-	  <th><%= @customer.introduction %></th>
-  </tr>
-  <tr>
-    <th>follows</th>
-    <th><%#= link_to customer.following_customers.count, customer_followings_path(customer) %></th>
-  </tr>
-  <tr>
-    <th>followers</th>
-    <th><%#= link_to customer.follower_customers.count, customer_followers_path(customer) %></th>
-  </tr>
-</table>
+<div class="profile">
+  <div class="profile_name_img">
+    <%= image_tag current_customer.get_profile_image, size: '100x100' %>
+    <%= @customer.name %>
+  </div>
 
+  <% if current_customer != @customer %>
+    <%= render "/public/relationships/follow_btn", customer: customer, options: { class: "follow-link" } %>
+  <% else %>
+    <%= link_to "編集", edit_public_customer_path(current_customer) %>
+  <% end %>
 
-<% if current_customer && current_customer == @customer %>
-  <%= link_to "プロフィールを編集", edit_public_customer_path(current_customer), class: "btn btn-outline-secondary btn-block" %>
-<% end %>
+  <p>フォロー　 <%= link_to @customer.followings.count, public_customer_followings_path(@customer) %></p>
+  <p>フォロワー <%= link_to @customer.followers.count, public_customer_followers_path(@customer) %></p>
+  <p>いいね</p>
+
+  <%= @customer.introduction %>
+</div>
 
 
 <% if @posts.any? %>

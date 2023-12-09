@@ -10,7 +10,11 @@
       <li><%= link_to "投稿一覧", public_posts_path %></li>
       <li><%= link_to "ネコトモ一覧", public_customers_path %></li>
       <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
-      <li><%= link_to "マイページ", public_customer_path(current_customer) %></li>
+      <li>
+        <%= link_to public_customer_path(current_customer) do %>
+          <%= image_tag current_customer.get_profile_image, size: '34x34' %>
+        <% end %>
+      </li>
     <% elsif admin_signed_in? %>
       <!-- 管理者ログイン時 -->
       <li><%= render "layouts/serach" %></li>

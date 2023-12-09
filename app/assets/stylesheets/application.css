@@ -24,6 +24,12 @@
   color: inherit;
 }
 
+ body {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
 /*ヘッダー*/
 #header {
   height: 80px;
@@ -33,6 +39,19 @@
   align-items: center;
   background-color: #fff;
   filter: drop-shadow(0 6px 12px #f0f0f0);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+main {
+   flex: 1;
+   margin-top: 100px;
+}
+
+footer {
+   margin-top: auto;
 }
 
 
@@ -91,4 +110,20 @@
   border-radius: 0px;
   cursor: pointer;
   font-size: 16px;
+}
+
+.post_wrap {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.post {
+  width: 32%;
+}
+
+.post_img {
+  width: 100%;
+
 }

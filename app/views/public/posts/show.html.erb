@@ -9,25 +9,15 @@
 </div>
 
 <div id="favorite_btn_<%= @post.id %>">
-  <%= render 'favorite', post: @post %>
+  <%= render '/public/favorites/favorite', post: @post %>
 </div>
 
-<p>コメント件数：<%= @post.post_comments.count %></p>
-
-<div>
-  <%= form_with model: [@post, @post_comment], url: public_post_posts_comment_path(@post) do |f| %>
-    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
-    <%= f.submit "送信する" %>
-  <% end %>
+<div id="comment_counter">
+ <%= render "/public/post_comments/counter", post: @post %>
 </div>
 
-<div>
-  <% @post.post_comments.each do |post_comment| %>
-    <p><%= image_tag post_comment.customer.get_profile_image(100,100) %></p>
-    <%= post_comment.customer.name %>
-    <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
-    <% if post_comment.user == current_user %>
-      <%= link_to "削除", post_image_post_comment_path(post_comment.post_image, post_comment), method: :delete %>
-    <% end %>
-  <% end %>
+<div id="comment_index">
+ <%= render "/public/post_comments/index", post: @post %>
 </div>
+
+<%= render "/public/post_comments/form", post: @post, book_comment: @post_comment %>

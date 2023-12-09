@@ -1,0 +1,8 @@
+<% post.post_comments.each do |post_comment| %>
+  <p><%= image_tag post_comment.customer.get_profile_image, size: '50x50' %></p>
+  <%= post_comment.customer.name %>
+  <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
+  <% if post_comment.customer == current_customer %>
+    <%= link_to "削除", public_post_post_comment_path(post_comment.post, post_comment), method: :delete, remote: true %>
+  <% end %>
+<% end %>

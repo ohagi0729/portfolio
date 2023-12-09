@@ -4,15 +4,5 @@
   <% end %>
   <%= customer.name %>
   <%= customer.introduction %>
-
-
-  <% if current_customer != customer %>
-    <% if current_customer.following?(user) %>
-      <%= link_to "フォロー外す", public_customer_relationships_path(customer.id), method: :delete %>
-    <% else %>
-      <%= link_to "フォローする", public_customer_relationships_path(customer.id), method: :post %>
-    <% end %>
-  <% end %>
-
-  <%#= link_to 'Show', customer %>
+  <%= render "/public/relationships/follow_btn", customer: customer, options: { class: "follow-link" } %>
 <% end %>
