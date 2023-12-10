@@ -1,5 +1,5 @@
-$(function() {
-  $('#top-btn').on('click',function(event){
+$(document).ready(function () {
+  $('.top-btn').on('click',function(event){
     $('body, html').animate({
       scrollTop:0
     }, 200);

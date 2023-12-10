@@ -4,15 +4,17 @@
       <%= link_to public_post_path(post.id) do %>
         <%= image_tag post.image, class: 'post_img' %>
       <% end %>
-  
-      <%= image_tag current_customer.get_profile_image, size: '50x50' %>
+
+      <%= link_to public_customer_path(post.customer) do %>
+        <%= image_tag post.customer.get_profile_image, size: '50x50' %>
+      <% end %>
       <p><%= post.customer.name %></p>
       <p><%= post.created_at.strftime('%Y/%m/%d') %></p>
-  
+
       <p><%= post.caption %></p>
-  
+
       <p><%= link_to "#{post.post_comments.count} コメント", public_post_path(post.id) %></p>
-  
+
       <div id="favorite_btn_<%= post.id %>">
         <%= render '/public/favorites/favorite', post: post %>
       </div>

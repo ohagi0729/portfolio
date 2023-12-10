@@ -1,8 +1,10 @@
 <% customers.each do |customer| %>
   <%= link_to public_customer_path(current_customer) do %>
-    <%= image_tag current_customer.get_profile_image, size: '50x50' %>
+    <%= image_tag customer.get_profile_image, size: '50x50' %>
   <% end %>
   <%= customer.name %>
   <%= customer.introduction %>
-  <%= render "/public/relationships/follow_btn", customer: customer, options: { class: "follow-link" } %>
+  <div id="follow-btn_<%= customer.id %>">
+    <%= render "/public/relationships/follow_btn", customer: customer %>
+  </div>
 <% end %>
