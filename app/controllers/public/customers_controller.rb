@@ -10,8 +10,6 @@ class Public::CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
     @posts = @customer.posts
     @post = Post.new
-    #@following_customers = @customer.following_customers
-    #@follower_customers = @customer.follower_customers
   end
 
   def edit
@@ -23,6 +21,23 @@ class Public::CustomersController < ApplicationController
     else
       render "edit"
     end
+  end
+
+  def followings
+    @customer = Customer.find(params[:id])
+    @customers = @customer.following_customers
+  end
+  
+  def followers
+    @customer = Customer.find(params[:id])
+    @customers = @customer.follower_customers
+  end
+  
+  def favorites 
+    @customer = Customer.find(params[:id])
+    favorites = Favorite.where(customer_id: @customer.id).pluck(:post_id)
+    @favorite_posts = Post.find(favorites)
+    @post = Post.find(params[:id])
   end
 
   def confirm

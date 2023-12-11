@@ -1,0 +1,5 @@
+<%#= link_to customer.followings.count, public_customer_followings_path(customer) %>
+
+<%= link_to public_customer_followings_path(customer), remote: true do %>
+  <%= customer.followings.count %>
+<% end %>

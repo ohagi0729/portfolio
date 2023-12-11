@@ -1,6 +1,6 @@
-<h2>Follow Users</h2>
-<% if @customer.exists? %>
-  <%= render "/public/customer/list", customer: @customer %>
+<h2>フォロワー</h2>
+<% if @customers.present? %>
+  <%= render "/public/customers/list", customers: @customers %>
 <% else %>
   <p>ユーザーはいません</p>
 <% end %>

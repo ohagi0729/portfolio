@@ -1,17 +1,26 @@
 <div class="profile">
   <div class="profile_name_img">
-    <%= image_tag current_customer.get_profile_image, size: '100x100' %>
+    <%= image_tag @customer.get_profile_image, size: '100x100' %>
     <%= @customer.name %>
   </div>
 
   <% if current_customer != @customer %>
-    <%= render "/public/relationships/follow_btn", customer: customer, options: { class: "follow-link" } %>
+    <div id="follow-btn_<%= @customer.id %>">
+      <%= render "/public/relationships/follow_btn", customer: @customer %>
+    </div>
   <% else %>
     <%= link_to "編集", edit_public_customer_path(current_customer) %>
   <% end %>
 
-  <p>フォロー　 <%= link_to @customer.followings.count, public_customer_followings_path(@customer) %></p>
-  <p>フォロワー <%= link_to @customer.followers.count, public_customer_followers_path(@customer) %></p>
+  <p>フォロー</p>
+  <div id="comment-counter">
+    <%= render "/public/relationships/followings_counter", customer: @customer %>
+  </div>
+
+  <p>フォロワー</p>
+  <div id="comment-counter">
+    <%= render "/public/relationships/followers_counter", customer: @customer %>
+  </div>
   <p>いいね</p>
 
   <%= @customer.introduction %>

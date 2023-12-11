@@ -1,1 +1,3 @@
 $('#follow-btn_<%= @customer.id %>').html("<%= j(render partial: '/public/relationships/follow_btn', locals: { customer: @customer }) %>")
+$('#followings-counter_<%= @customer.id %>').html("<%= j(render partial: '/public/relationships/followings_counter', locals: { customer: @customer }) %>")
+$('#followers-counter_<%= @customer.id %>').html("<%= j(render partial: '/public/relationships/followers_counter', locals: { customer: @customer }) %>")
