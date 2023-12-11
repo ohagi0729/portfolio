@@ -22,6 +22,8 @@
   list-style-type: none;
   text-decoration: none;
   color: inherit;
+  font-family: 'Zen Maru Gothic', serif;
+  font-size: 16px;
 }
 
  body {
@@ -57,6 +59,11 @@ footer {
 
 #global_nav {
   margin-left: auto;
+  font-weight: bold;
+}
+
+#global_nav ul {
+  height: 40px;
 }
 
 #global_nav ul {
@@ -66,25 +73,32 @@ footer {
 }
 
 #global_nav li {
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 #global_nav li a {
-  line-height: 34px;
+  line-height: 40px;
 }
 
 #search_form {  /*検索フォーム外枠*/
-  padding: 4px;
-  border: 1px solid #ddd;
-  border-radius: 5px
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px
 }
 
-#search_form select {  /*検索フォームセレクト部分*/
+.custom_select {  /*検索フォームセレクト部分*/
   background-color: #fff;
   border: 0px;
-  padding: 0px;
+  padding: 0 15px 0 15px;
+  border-left: 1px solid #e6e6e6;
   border-radius: 0px;
-  font-size: 16px;
+  font-weight: bold;
+}
+
+.border_hide {
+  border-left: 0px;
 }
 
 #search_form select:focus {
@@ -94,9 +108,9 @@ footer {
 #search_form input[type="text"] {  /*検索フォーム入力部分*/
   background-color: #fff;
   border: 0px;
-  padding: 0px;
+  padding: 0 0 0 10px;
+  border-left: 1px solid #e6e6e6;
   border-radius: 0px;
-  font-size: 16px;
 }
 
 #search_form input[type="text"]:focus {
@@ -110,6 +124,23 @@ footer {
   border-radius: 0px;
   cursor: pointer;
   font-size: 16px;
+}
+
+.header_profile_image {  /*アイコン部分*/
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 50%;
+}
+
+.header_btn {
+  width: 140px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 20px;
 }
 
 .post_wrap {

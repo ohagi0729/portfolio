@@ -8,24 +8,24 @@
       <!--顧客ログイン時 -->
       <li><%= render "public/searches/serach" %></li>
       <li><%= link_to "投稿一覧", public_posts_path %></li>
-      <li><%= link_to "ネコトモ一覧", public_customers_path %></li>
-      <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
+      <li><%= link_to "会員一覧", public_customers_path %></li>
+      <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'header_btn' %></li>
       <li>
         <%= link_to public_customer_path(current_customer) do %>
-          <%= image_tag current_customer.get_profile_image, size: '34x34' %>
+          <%= image_tag current_customer.get_profile_image, class: 'header_profile_image' %>
         <% end %>
       </li>
     <% elsif admin_signed_in? %>
       <!-- 管理者ログイン時 -->
       <li><%= render "layouts/serach" %></li>
       <li><%= link_to "投稿一覧", public_posts_path %></li>
-      <li><%= link_to "ネコトモ一覧", admin_customers_path %></li>
-      <li><%= link_to "カテゴリ一覧", admin_genres_path %></li>
-      <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, url: admin_session_path %></li>
+      <li><%= link_to "会員一覧", admin_customers_path %></li>
+      <li><%= link_to "カテゴリー一覧", admin_genres_path %></li>
+      <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, url: admin_session_path, class: 'header_btn' %></li>
     <% else %>
       <!-- ログアウト時 -->
-      <li><%= link_to "新規登録", new_customer_registration_path %></li>
-      <li><%= link_to "ログイン", new_customer_session_path %></li>
+      <li><%= link_to "新規登録", new_customer_registration_path, class: 'header_btn' %></li>
+      <li><%= link_to "ログイン", new_customer_session_path, class: 'header_btn' %></li>
     <% end %>
   </ul>
 </nav>

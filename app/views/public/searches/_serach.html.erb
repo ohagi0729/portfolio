@@ -1,8 +1,8 @@
 <% if customer_signed_in? %>
   <div id="search_form">
     <%= form_with url: public_search_path, local: true, method: :get do |f| %>
-      <%= f.select :range, options_for_select([['ネコ友'], ['投稿　　']]) %> |
-      <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["部分一致","partial_match"]]) %> |
+      <%= f.select :range, options_for_select([['会員','Customer'], ['投稿','Post']]), {}, { class: 'custom_select border_hide' } %>
+      <%= f.select :search, options_for_select([["完全一致 ","perfect_match"], ["部分一致 ","partial_match"]]), {}, { class: 'custom_select' } %>
       <%= f.text_field :word %>
       <%= f.submit "検索" %>
     <% end %>
