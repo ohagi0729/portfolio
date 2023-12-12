@@ -1,8 +1,21 @@
 <% post.post_comments.each do |post_comment| %>
-  <p><%= image_tag post_comment.customer.get_profile_image, size: '50x50' %></p>
-  <%= post_comment.customer.name %>
-  <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
-  <% if post_comment.customer == current_customer %>
-    <%= link_to "削除", public_post_post_comment_path(post_comment.post, post_comment), method: :delete, remote: true %>
+
+<div class="icon_neme_day">
+  <%= link_to public_customer_path(post.customer), class: 'profile_img_s' do %>
+    <%= image_tag post.customer.get_profile_image %>
   <% end %>
+  <div>
+    <div class="comment_profile_flex">
+      <p class="customer_name"><%= post_comment.customer.name %></p>
+      <p class="post_day"><%= post_comment.created_at.strftime('%Y年%m月%d日') %></p>
+    </div>
+    <div class="comment_profile_flex">
+      <p class="comment_text"><%= post_comment.comment %></p>
+      <% if post_comment.customer == current_customer %>
+        <%= link_to "削除", public_post_post_comment_path(post_comment.post, post_comment), method: :delete, data: { confirm: "本当に消しますか？" } , remote: true %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <% end %>

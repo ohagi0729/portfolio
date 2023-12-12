@@ -1,23 +1,39 @@
-<div>
-  <%= image_tag @post.get_image %>
-  <p>説明：<%= @post.caption %></p>
-  <%= link_to public_customer_path(current_customer) do %>
-    <%= image_tag current_customer.get_profile_image, size: '50x50' %>
-  <% end %>
-  <p>ユーザーネーム：<%= @post.customer.name %></p>
-  <p>投稿日：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
-</div>
+<div class="post_show">
 
-<div id="favorite_btn_<%= @post.id %>">
-  <%= render '/public/favorites/favorite', post: @post %>
-</div>
+  <%= image_tag @post.get_image, class: 'post_show_img' %>
 
-<div id="comment_counter">
- <%= render "/public/post_comments/counter", post: @post %>
-</div>
+  <div class="post_text">
+    <div class="icon_neme_day">
+      <%= link_to public_customer_path(current_customer), class: 'profile_img_s' do %>
+        <%= image_tag current_customer.get_profile_image %>
+      <% end %>
+      <div class="profile_flex">
+        <p class="customer_name"><%= @post.customer.name %></p>
+        <p class="post_day"><%= @post.created_at.strftime('%Y年%m月%d日') %></p>
+      </div>
+    </div>
 
-<div id="comment_index">
- <%= render "/public/post_comments/index", post: @post %>
-</div>
+    <p class="post_caption"><%= @post.caption %></p>
 
-<%= render "/public/post_comments/form", post: @post, book_comment: @post_comment %>
+
+    <div class="show_comment_favo">
+      <% if @post.customer == current_customer %>
+        <%= link_to "削除", public_post_path(@post), method: :delete, data: { confirm: "本当に消しますか？" }  %>
+      <% end %>
+
+      <div id="comment_counter" class="favo">
+       <%= render "/public/post_comments/counter", post: @post %>
+      </div>
+
+      <div id="favorite_btn_<%= @post.id %>" class="favo">
+        <%= render '/public/favorites/favorite', post: @post %>
+      </div>
+    </div>
+
+    <%= render "/public/post_comments/form", post: @post, post_comment: @post_comment %>
+
+    <div id="comment_index">
+      <%= render "/public/post_comments/index", post: @post %>
+    </div>
+  </div>
+</div>

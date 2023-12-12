@@ -11,8 +11,8 @@
       <li><%= link_to "会員一覧", public_customers_path %></li>
       <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'header_btn' %></li>
       <li>
-        <%= link_to public_customer_path(current_customer) do %>
-          <%= image_tag current_customer.get_profile_image, class: 'header_profile_image' %>
+        <%= link_to public_customer_path(current_customer), class: 'profile_img_s' do %>
+          <%= image_tag current_customer.get_profile_image %>
         <% end %>
       </li>
     <% elsif admin_signed_in? %>

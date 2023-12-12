@@ -9,19 +9,28 @@
       <%= render "/public/relationships/follow_btn", customer: @customer %>
     </div>
   <% else %>
-    <%= link_to "編集", edit_public_customer_path(current_customer) %>
+    <% unless @customer.guest_customer? %>
+      <%= link_to "編集", edit_public_customer_path(current_customer) %>
+    <% end %>
   <% end %>
 
-  <p>フォロー</p>
-  <div id="comment-counter">
-    <%= render "/public/relationships/followings_counter", customer: @customer %>
+  <div id="followings-counter_<%= @customer.id %>">
+    <%= link_to public_customer_followings_path(@customer) do %>
+      <%= render "/public/relationships/followings_counter", customer: @customer %>
+    <% end %>
   </div>
 
-  <p>フォロワー</p>
-  <div id="comment-counter">
-    <%= render "/public/relationships/followers_counter", customer: @customer %>
+  <div id="followers-counter_<%= @customer.id %>">
+    <%= link_to public_customer_followers_path(@customer) do %>
+      <%= render "/public/relationships/followers_counter", customer: @customer %>
+    <% end %>
   </div>
-  <p>いいね</p>
+
+  <div id="favorites-counter_<%= @customer.id %>">
+    <%= link_to favorites_public_customer_path(@customer) do %>
+      <%= render "/public/favorites/favorite_counter", customer: @customer %>
+    <% end %>
+  </div>
 
   <%= @customer.introduction %>
 </div>

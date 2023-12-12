@@ -37,6 +37,10 @@ class Customer < ApplicationRecord
     followings.include?(user)
   end
 
+  def favorites_count
+    favorites.count
+  end
+
   enum is_active: {active: true, non_active: false}
 
   def get_profile_image
@@ -52,6 +56,23 @@ class Customer < ApplicationRecord
     else
       @customer = Customer.all
     end
+  end
+
+  GUEST_USER_EMAIL = "guest@example.com"
+
+  def self.guest
+    find_or_create_by!(email: GUEST_USER_EMAIL) do |customer|
+      customer.password = SecureRandom.urlsafe_base64
+      customer.name = "ゲスト"
+    end
+  end
+
+  def guest_customer?
+    email == GUEST_USER_EMAIL
+  end
+
+  def active_for_authentication?
+    super && (is_active == 'active')
   end
 
 end
