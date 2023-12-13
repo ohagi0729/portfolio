@@ -19,7 +19,7 @@
         <p class="post_caption"><%= post.caption %></p>
 
         <div class="comment_favo">
-          <p><%= link_to "#{post.post_comments.count} コメント", public_post_path(post.id) %></p>
+          <p><%= link_to "#{post.post_comments_by_active_customer.count} コメント", public_post_path(post.id) %></p>
           <div id="favorite-btn_<%= post.id %>" class="favo">
             <%= render '/public/favorites/favorite', post: post %>
           </div>
@@ -30,4 +30,7 @@
   <% end %>
 </div>
 
-<%= render '/public/posts/post_btn' %>
+<div class="bottom_btn">
+  <%= render '/public/posts/post_btn' %>
+  <a class="top-btn top_btn_bottom">TOP</a>
+</div>

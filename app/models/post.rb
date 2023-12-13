@@ -33,6 +33,14 @@ class Post < ApplicationRecord
     end
   end
 
+  def favorites_by_active_customer
+    favorites.joins(:customer).where(customer: {is_active: true})
+  end
+
+  def post_comments_by_active_customer
+    post_comments.joins(:customer).where(customer: {is_active: true})
+  end
+
   #登録日が最新の投稿が左上に来るようにする指示
   default_scope -> { order(created_at: :desc) }
 end

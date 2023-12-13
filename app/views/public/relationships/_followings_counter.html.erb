@@ -1,3 +1,3 @@
-<%= link_to public_customer_followings_path(customer) do %>
-  <%= customer.followings.count %>フォロー中
+<%= link_to public_customer_followings_path(customer), class: "customer_show_counters"  do %>
+  <%= customer.followings.count %><span> フォロー中</span>
 <% end %>

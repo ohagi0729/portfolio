@@ -1,4 +1,4 @@
-<% post.post_comments.each do |post_comment| %>
+<% post_comments.each do |post_comment| %>
 <div class="icon_neme_day">
   <%= link_to public_customer_path(post_comment.customer), class: 'profile_img_s' do %>
     <%= image_tag post_comment.customer.get_profile_image %>

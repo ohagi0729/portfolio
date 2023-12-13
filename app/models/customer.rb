@@ -38,7 +38,7 @@ class Customer < ApplicationRecord
   end
 
   def favorites_count
-    favorites.count
+    favorites.joins(post: :customer).where(post: {customers: {is_active: true}}).count
   end
 
   enum is_active: {active: true, non_active: false}

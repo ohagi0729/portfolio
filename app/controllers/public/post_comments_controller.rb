@@ -1,4 +1,5 @@
 class Public::PostCommentsController < ApplicationController
+   
    def create
       post = Post.find(params[:post_id])
       if !post.customer.is_active

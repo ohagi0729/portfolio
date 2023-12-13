@@ -1,6 +1,6 @@
-<div class="customers_list">
+<ul class="customers_list">
   <% customers.each do |customer| %>
-  <div class="customers_wrap">
+  <li class="customers_wrap">
     <div class="icon_neme_day">
       <%= link_to public_customer_path(customer), class: 'profile_img_s' do %>
         <%= image_tag customer.get_profile_image %>
@@ -15,8 +15,13 @@
             <%= render "/public/relationships/follow_btn", customer: customer %>
           </div>
         </div>
-      </dibv>
+      </div>
     </div>
-  </div>
+  </li>
   <% end %>
+</ul>
+
+<div class="bottom_btn">
+  <%= render '/public/posts/post_btn' %>
+  <a class="top-btn top_btn_bottom">TOP</a>
 </div>
