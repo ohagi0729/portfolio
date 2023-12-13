@@ -2,11 +2,11 @@
   <div class="profile">
     <div class="profile_btn">
       <div class="icon_neme_customer">
-        
+
         <div class="profile_name_img">
           <%= image_tag @customer.get_profile_image, class: "profile_img_b" %>
         </div>
-      
+
         <div>
           <p class="customer_name_b"><%= @customer.name %></p>
           <div class="counter_flex">
@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      
+
       <div clss="folow_edit">
         <% if current_customer != @customer %>
           <div id="follow-btn_<%= @customer.id %>">
@@ -36,7 +36,7 @@
           </div>
         <% else %>
           <% unless @customer.guest_customer? %>
-            <%= link_to "編集", edit_public_customer_path(current_customer) %>
+            <%= link_to "編集", edit_public_customer_path(current_customer), class: "btn_g_s" %>
           <% end %>
         <% end %>
       </div>

@@ -1,8 +1,7 @@
 <% post.post_comments.each do |post_comment| %>
-
 <div class="icon_neme_day">
-  <%= link_to public_customer_path(post.customer), class: 'profile_img_s' do %>
-    <%= image_tag post.customer.get_profile_image %>
+  <%= link_to public_customer_path(post_comment.customer), class: 'profile_img_s' do %>
+    <%= image_tag post_comment.customer.get_profile_image %>
   <% end %>
   <div>
     <div class="comment_profile_flex">
@@ -17,5 +16,4 @@
     </div>
   </div>
 </div>
-
 <% end %>

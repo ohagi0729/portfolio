@@ -4,8 +4,8 @@
 
   <div class="post_text">
     <div class="icon_neme_day">
-      <%= link_to public_customer_path(current_customer), class: 'profile_img_s' do %>
-        <%= image_tag current_customer.get_profile_image %>
+      <%= link_to public_customer_path(@post.customer), class: 'profile_img_s' do %>
+        <%= image_tag @post.customer.get_profile_image %>
       <% end %>
       <div class="profile_flex">
         <p class="customer_name"><%= @post.customer.name %></p>
@@ -18,7 +18,7 @@
 
     <div class="show_comment_favo">
       <% if @post.customer == current_customer %>
-        <%= link_to "削除", public_post_path(@post), method: :delete, data: { confirm: "本当に消しますか？" }  %>
+        <%= link_to "削除", public_post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } %>
       <% end %>
 
       <div id="comment_counter" class="favo">

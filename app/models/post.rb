@@ -32,4 +32,7 @@ class Post < ApplicationRecord
       @post = Post.all
     end
   end
+
+  #登録日が最新の投稿が左上に来るようにする指示
+  default_scope -> { order(created_at: :desc) }
 end

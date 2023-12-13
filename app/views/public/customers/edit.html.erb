@@ -1,18 +1,33 @@
 <h3 class="page_title">プロフィールを編集する</h3>
-<%= form_with model: @customer, url: public_customer_path(@customer), local: true, method: :patch do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, autofocus: true, class: "form-control name" %>
+<div class="form_wrap">
+  <%= form_with model: @customer, url: public_customer_path(@customer), local: true, method: :patch do |f| %>
+
+  <div class="form_flex_prf">
+    <p >プロフィール画像</p>
+    <div>
+      <%= f.file_field :profile_image, class: "form-control_img", accept: 'image/*' %>
+    </div>
   </div>
- <div class="form-group">
-    <%= f.label :image %>
-    <%= f.file_field :profile_image, class: "form-control-file user_image", accept: 'image/*' %>
+
+  <div class="form_flex_prf">
+    <p >ユーザーネーム</p>
+    <div>
+      <%= f.text_field :name, autofocus: true, class: "form-control" %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.label :introduction %>
-    <%= f.text_area :introduction, class: "form-control introduction" %>
+
+  <div class="form_flex_prf form_flex_int">
+    <p >自己紹介</p>
+    <div class="form-group">
+      <%= f.text_area :introduction, class: "form-control_int" %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.submit class: 'btn btn-secondary' %>
+
+  <div class="form_flex_prf form_flex_int">
+    <%= link_to  'キャンセル',public_customer_path(current_customer), class: 'btn_g' %>
+    <%= f.submit '更新する', class: 'btn_y' %>
   </div>
-<% end %>
+
+  <p><%= link_to '退会はこちら >', public_customers_confirm_path %></p>
+  <% end %>
+</div>

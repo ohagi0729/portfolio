@@ -75,4 +75,6 @@ class Customer < ApplicationRecord
     super && (is_active == 'active')
   end
 
+#登録日が最新の会員が上に来るようにする指示
+default_scope -> { order(created_at: :desc) }
 end

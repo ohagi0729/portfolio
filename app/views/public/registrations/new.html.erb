@@ -1,22 +1,40 @@
 <h3 class="page_title">新規登録</h3>
-<%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', local: true do |f| %>
-  <div>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="form_wrap">
+  <%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', local: true do |f| %>
+    <div>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    </div>
+
+  <div class="form_flex">
+    <p >名　前</p>
+    <div>
+    <%= f.text_field :name, autofocus: true, class:"form-control" %>
+    </div>
   </div>
-  <div>
-  <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputName", placeholder:"名前"%>
+
+  <div class="form_flex">
+    <p>メールアドレス</p>
+    <div>
+    <%= f.email_field :email, autofocus: true, class:"form-control" %>
+    </div>
   </div>
-  <div>
-  <%= f.email_field :email, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"メールアドレス" %>
+
+  <div class="form_flex">
+    <p>パスワード</p>
+    <div>
+    <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
+    </div>
   </div>
-  <div>
-  <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"inputPassword", placeholder:"パスワード" %>
+
+  <div class="form_flex">
+    <p>パスワード<br>(確認用)</p>
+    <div>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
+    </div>
   </div>
-  <div>
-  <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", id:"inputConfirmPassword", placeholder:"パスワード確認" %>
-  </div>
-  <div>
-  <%= f.submit "サインアップ", class:"btn btn-block btn-info mt-5" %>
-  </div>
-  
-<% end %>
+
+    <div>
+    <%= f.submit "サインアップ" %>
+    </div>
+  <% end %>
+</div>

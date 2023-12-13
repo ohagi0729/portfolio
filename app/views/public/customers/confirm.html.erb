@@ -1,10 +1,10 @@
 <h3 class="page_title">退会手続き</h3>
-
-<h4>本当に退会しますか？</h4>
-<p>
- 再度ご利用をいただく場合には<br>
- 新規登録のお手続きが必要になります。<br>
- 本当に退会してよろしいですか？
-</p>
-  <%= link_to '退会しない', public_customer_path(@customer) %>
-  <%= link_to "退会する", public_customers_unsubscribe_path, method: :patch, data: { confirm: '本当に退会しますか？' } %>
+<div class="confirm_wrap">
+  <h4>本当に退会しますか？</h4>
+  <p>
+   再度ご利用をいただく場合には新規登録のお手続きが必要になります。<br>
+   本当に退会してよろしいですか？
+  </p>
+  <%= link_to '退会しない', public_customer_path(@customer), class:"btn_g" %>
+  <%= link_to "退会する", public_customers_unsubscribe_path, method: :patch, data: { confirm: '本当に退会しますか？' }, class:"btn_y" %>
+</div>
