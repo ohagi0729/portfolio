@@ -1,6 +1,7 @@
 class Public::PostsController < ApplicationController
   before_action :authenticate_customer!, only: [:create]
   before_action :ensure_correct_customer, only: [:edit, :update]
+  before_action :active_customer, only:[:show,:update]
 
   def new
     @post = Post.new
@@ -17,8 +18,8 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
-    @customers = Customer.all
+    @posts = Post.where(customer_id:Customer.where(is_active:true).pluck(:id))
+    @customers = Customer.where(is_active:true)
   end
 
   def show
@@ -33,6 +34,11 @@ class Public::PostsController < ApplicationController
   end
 
   private
+  def active_customer
+    if !Post.find(params[:id]).customer.is_active
+      redirect_to public_posts_path
+    end
+  end
 
   def post_params
     params.require(:post).permit(:image, :caption)

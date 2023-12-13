@@ -49,14 +49,19 @@
 }
 
 main {
-   flex: 1;
-   margin-top: 130px;
+  flex: 1;
 }
 
 footer {
    margin-top: auto;
 }
 
+.page_title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin: 120px 0 38px 0;
+}
 
 #global_nav {
   margin-left: auto;
@@ -142,6 +147,22 @@ footer {
   text-align: center;
   border: 1px solid #e6e6e6;
   border-radius: 20px;
+}
+
+.top_text_wrap {
+  padding: 40px 0;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.top_copy  {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.top_text  {
+  font-weight: bold;
+  line-height: 34px;
 }
 
 /*投稿一覧部分*/
@@ -249,4 +270,109 @@ footer {
   margin-right: 14px;
   line-height: 24px;
   font-size: 14px;
+}
+
+/*投稿フォーム部分*/
+.form_wrap {
+  padding: 40px;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
+}
+
+.form_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post_nwe_title {
+  width: 138px;
+  height: 30px;
+  margin-bottom: 20px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.post_nwe_form {
+  margin-bottom: 20px;
+}
+
+/*会員一覧部分*/
+.customers_list {
+  margin: 0 auto;
+  width: 600px;
+}
+
+.customers_wrap {
+  width: 600px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.customers_text {
+  width: 404px;
+}
+
+/*会員詳細部分*/
+.profile_bg {
+  padding: 120px 0 40px;
+  margin-bottom: 40px;
+  background-color: #f2f2f2;
+}
+
+.profile {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.profile_btn {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile_img_b {
+  width: 130px;
+  height: 130px;
+  margin-right: 20px;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 50%;
+}
+
+.icon_neme_customer {
+  display: flex;
+}
+
+.customer_name_b {
+  margin: 70px 0 16px 0;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.counter_flex {
+  display: flex;
+}
+
+.counter_flex a {
+  margin-right: 16px;
+}
+
+.customer_show_text {
+  line-height: 30px;
+}
+
+
+
+
+#footer {
+  height: 30px;
+  text-align: center;
+  background-color: #000;
+}
+
+#footer p{
+  color: #fff;
+  line-height: 30px;
+  font-weight: bold;
 }

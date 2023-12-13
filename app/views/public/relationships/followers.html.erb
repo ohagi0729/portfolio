@@ -1,6 +1,6 @@
-<h2>フォロワー</h2>
-<% if @customers.present? %>
-  <%= render "/public/customers/list", customers: @customers %>
+<h3 class="page_title">フォロワー</h3>
+<% if @customers.exists? %>
+  <%= render "/public/customers/list", customers: @customer %>
 <% else %>
   <p>ユーザーはいません</p>
 <% end %>

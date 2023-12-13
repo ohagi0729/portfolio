@@ -1,10 +1,22 @@
-<% customers.each do |customer| %>
-  <%= link_to public_customer_path(customer) do %>
-    <%= image_tag customer.get_profile_image, size: '50x50' %>
-  <% end %>
-  <%= customer.name %>
-  <%= customer.introduction %>
-  <div id="follow-btn_<%= customer.id %>">
-    <%= render "/public/relationships/follow_btn", customer: customer %>
+<div class="customers_list">
+  <% customers.each do |customer| %>
+  <div class="customers_wrap">
+    <div class="icon_neme_day">
+      <%= link_to public_customer_path(customer), class: 'profile_img_s' do %>
+        <%= image_tag customer.get_profile_image %>
+      <% end %>
+      <div>
+        <div class="comment_profile_flex">
+          <p class="customer_name"><%= customer.name %></p>
+        </div>
+        <div class="comment_profile_flex">
+          <p class="customers_text"><%= customer.introduction %></p>
+          <div id="follow-btn_<%= customer.id %>">
+            <%= render "/public/relationships/follow_btn", customer: customer %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>
+  <% end %>
+</div>

@@ -1,9 +1,10 @@
 class Public::CustomersController < ApplicationController
   before_action :ensure_correct_customer, only: [:edit, :update]
   before_action :ensure_guest_customer, only: [:edit]
+  before_action :active_customer, only:[:show,:edit,:update,:followings,:followers,:favorites]
 
   def index
-    @customers = Customer.all
+    @customers = Customer.where(is_active:true)
     @post = Post.new
   end
 
@@ -68,7 +69,7 @@ class Public::CustomersController < ApplicationController
     end
   end
 
-  def ensure_guest_user
+  def ensure_guest_customer
     @customer = Customer.find(params[:id])
     if @customer.guest_customer?
       redirect_to customer_path(current_customer) , notice: "ゲストユーザーはプロフィール編集画面へ遷移できません。"
@@ -76,6 +77,11 @@ class Public::CustomersController < ApplicationController
   end
 
 protected
+  def active_customer
+    if !Customer.find(params[:id]).is_active
+      redirect_to public_customers_path
+    end
+  end
 
   # 会員の論理削除のための記述。退会後は、同じアカウントでは利用できない。
   def reject_customer
