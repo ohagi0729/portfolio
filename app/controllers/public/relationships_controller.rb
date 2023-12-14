@@ -19,7 +19,7 @@ class Public::RelationshipsController < ApplicationController
 
   def followers
     customer = Customer.find(params[:customer_id])
-    @customer = customer.followers.where(is_active:true)
+    @customers = customer.followers.where(is_active:true)
   end
 
   def active_customer

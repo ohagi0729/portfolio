@@ -1,2 +1,39 @@
-<h1>Admin::Customers#edit</h1>
-<p>Find me in app/views/admin/customers/edit.html.erb</p>
+<h3 class="page_title">プロフィールを編集する（管理）</h3>
+<div class="form_wrap">
+  <%= form_with model: @customer, url: admin_customer_path(@customer), local: true, method: :patch do |f| %>
+
+  <div class="form_flex_prf">
+    <p>プロフィール画像</p>
+    <div>
+      <%= f.file_field :profile_image, class: "form-control_img", accept: 'image/*' %>
+    </div>
+  </div>
+
+  <div class="form_flex_prf">
+    <p>ユーザーネーム</p>
+    <div>
+      <%= f.text_field :name, autofocus: true, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form_flex_prf form_flex_int">
+    <p>自己紹介</p>
+    <div class="form-group">
+      <%= f.text_area :introduction, class: "form-control_int" %>
+    </div>
+  </div>
+
+  <div>
+    <p>会員ステータス</p>
+    <div>
+      <%= f.radio_button :is_active, true %><%= f.label :is_active, "有効" %>
+      <%= f.radio_button :is_active, false %><%= f.label :is_active, "退会済み" %>
+    </div>
+  </div>
+
+  <div class="form_flex_prf form_flex_int">
+    <%= link_to  'キャンセル',admin_customers_path, class: 'btn_g' %>
+    <%= f.submit '更新する', class: 'btn_y' %>
+  </div>
+  <% end %>
+</div>

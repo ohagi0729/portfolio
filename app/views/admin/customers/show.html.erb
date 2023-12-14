@@ -1,2 +1,53 @@
-<h1>Admin::Customers#show</h1>
-<p>Find me in app/views/admin/customers/show.html.erb</p>
+<div class="profile_bg">
+  <div class="profile">
+    <div class="profile_btn">
+      <div class="icon_neme_customer">
+
+        <div class="profile_name_img">
+          <%= image_tag @customer.get_profile_image, class: "profile_img_b" %>
+        </div>
+
+        <div>
+          <p class="customer_name_b"><%= @customer.name %></p>
+          <div class="counter_flex">
+            <div id="followings-counter_<%= @customer.id %>">
+              <%= link_to public_customer_followings_path(@customer) do %>
+                <%= render "/public/relationships/followings_counter", customer: @customer %>
+              <% end %>
+            </div>
+            <div id="followers-counter_<%= @customer.id %>">
+              <%= link_to public_customer_followers_path(@customer) do %>
+                <%= render "/public/relationships/followers_counter", customer: @customer %>
+              <% end %>
+            </div>
+            <div id="favorites-counter_<%= @customer.id %>">
+              <%= link_to favorites_public_customer_path(@customer) do %>
+                <%= render "/public/favorites/favorite_counter", customer: @customer %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div clss="folow_edit">
+        <% if current_customer != @customer %>
+          <div id="follow-btn_<%= @customer.id %>">
+            <%= render "/public/relationships/follow_btn", customer: @customer %>
+          </div>
+        <% else %>
+          <% unless @customer.guest_customer? %>
+            <%= link_to "編集", edit_public_customer_path(current_customer), class: "btn_g_s" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <p class="customer_show_text"><%= @customer.introduction %></p>
+  </div>
+</div>
+
+
+<% if @posts.any? %>
+  <%= render partial: 'public/posts/list', locals: { posts: @posts } %>
+<% else %>
+  <p>まだ投稿がありません。</p>
+<% end %>

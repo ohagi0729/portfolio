@@ -21,8 +21,9 @@
       <%#= f.label :remember_me %>
     <%# end %>
 
-    <div class="actions">
-      <%= f.submit "Log in" %>
+    <div class="form_flex">
+      <%= link_to 'キャンセル', root_path, class:"btn_g" %>
+      <%= f.submit "ログイン",class: "btn_y" %>
     </div>
   <% end %>
 </div>

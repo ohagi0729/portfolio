@@ -150,30 +150,30 @@ footer {
   right: 10px;
 }
 
-#global_nav {
+.global_nav {
   margin-left: auto;
   font-weight: bold;
 }
 
-#global_nav ul {
+.global_nav ul {
   height: 40px;
 }
 
-#global_nav ul {
+.global_nav ul {
   padding: 0;
   margin: 0;
   display: flex;
 }
 
-#global_nav li {
+.global_nav li {
   margin-left: 30px;
 }
 
-#global_nav li a {
+.global_nav li a {
   line-height: 40px;
 }
 
-#search_form {  /*検索フォーム外枠*/
+.search_form {  /*検索フォーム外枠*/
   height: 40px;
   display: flex;
   align-items: center;
@@ -194,11 +194,11 @@ footer {
   border-left: 0px;
 }
 
-#search_form select:focus {
+.search_form select:focus {
   outline: none;
 }
 
-#search_form input[type="text"] {  /*検索フォーム入力部分*/
+.search_form input[type="text"] {  /*検索フォーム入力部分*/
   background-color: #fff;
   border: 0px;
   padding: 0 0 0 10px;
@@ -206,11 +206,11 @@ footer {
   border-radius: 0px;
 }
 
-#search_form input[type="text"]:focus {
+.search_form input[type="text"]:focus {
   outline: none;
 }
 
-#search_form input[type="submit"] {  /*検索フォームボタン部分*/
+.search_form input[type="submit"] {  /*検索フォームボタン部分*/
   background-color: #fff;
   padding: 0px;
   border: none;

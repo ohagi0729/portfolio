@@ -33,8 +33,9 @@
     </div>
   </div>
 
-    <div>
-    <%= f.submit "サインアップ" %>
-    </div>
+  <div class="form_flex">
+    <%= link_to 'キャンセル', root_path, class:"btn_g" %>
+    <%= f.submit "新規登録する",class: "btn_y" %>
+  </div>
   <% end %>
 </div>

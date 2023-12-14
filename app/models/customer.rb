@@ -37,11 +37,12 @@ class Customer < ApplicationRecord
     followings.include?(user)
   end
 
+  # activeのユーザーの投稿をいくついいねしたか数える
   def favorites_count
     favorites.joins(post: :customer).where(post: {customers: {is_active: true}}).count
   end
 
-  enum is_active: {active: true, non_active: false}
+  #enum is_active: {active: true, non_active: false}
 
   def get_profile_image
     profile_image.attached? ? profile_image : 'no_image.jpg'
@@ -69,10 +70,6 @@ class Customer < ApplicationRecord
 
   def guest_customer?
     email == GUEST_USER_EMAIL
-  end
-
-  def active_for_authentication?
-    super && (is_active == 'active')
   end
 
 #登録日が最新の会員が上に来るようにする指示

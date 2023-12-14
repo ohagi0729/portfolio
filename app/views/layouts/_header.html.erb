@@ -2,7 +2,7 @@
 
 <h1><a class="top-btn">ネコログ</a></h1>
 
-<nav id="global_nav">
+<nav class="global_nav">
   <ul>
     <% if customer_signed_in? %>
       <!--顧客ログイン時 -->
@@ -17,10 +17,10 @@
       </li>
     <% elsif admin_signed_in? %>
       <!-- 管理者ログイン時 -->
-      <li><%= render "layouts/serach" %></li>
-      <li><%= link_to "投稿一覧", public_posts_path %></li>
+      <li><%= render "public/searches/serach" %></li>
+      <li><%= link_to "投稿一覧", admin_posts_path %></li>
       <li><%= link_to "会員一覧", admin_customers_path %></li>
-      <li><%= link_to "カテゴリー一覧", admin_genres_path %></li>
+      <!--<li><%#= link_to "カテゴリー一覧", admin_genres_path %></li>-->
       <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, url: admin_session_path, class: 'header_btn' %></li>
     <% else %>
       <!-- ログアウト時 -->
