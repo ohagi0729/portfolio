@@ -12,14 +12,13 @@
   <tr>
     <td><%= customer.id %></th>
     <td>
-      <%= link_to edit_admin_customer_path(customer), class: 'profile_img_s' do %>
+      <%= link_to public_customers_path(customer), class: 'profile_img_s' do %>
         <%= image_tag customer.get_profile_image %>
       <% end %>
     </td>
     <td><%= customer.name %></td>
     <td><%= customer.email %></td>
     <td>
-      <%#= customer.is_active? %>
       <% if customer.is_active? %>
         <span>有効</span>
       <% else %>

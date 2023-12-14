@@ -39,7 +39,6 @@ class Public::CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
     favorited_post_id = Favorite.where(customer_id: @customer.id).pluck(:post_id)
     @favorite_posts = Post.joins(:customer).where(customer: { is_active: true}, id: favorited_post_id)
-
   end
 
   def confirm

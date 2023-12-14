@@ -7,6 +7,8 @@ class Admin::CustomersController < ApplicationController
   end
 
   def show
+    @customer = Customer.find(params[:id])
+    @posts = @customer.posts
   end
 
   def edit
@@ -15,6 +17,8 @@ class Admin::CustomersController < ApplicationController
   def update
     @customer.update(customer_params) ? (redirect_to admin_customer_path(@customer)) : (render :edit)
   end
+
+
 
   private
 
