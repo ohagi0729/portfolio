@@ -154,17 +154,9 @@ footer {
   cursor: pointer;
 }
 
-.top_btn_bottom {
+.top_btn {
   width: 60px;
-  height: 60px;
   display: block;
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  line-height: 60px;
-  border-radius: 50%;
-  background-color: #000;
   cursor: pointer;
 }
 
@@ -323,7 +315,7 @@ cursor: pointer;
 /*投稿一覧部分*/
 .post_wrap {
   max-width: 1020px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -381,14 +373,39 @@ cursor: pointer;
   right: 20px;
 }
 
-.favo {
-  margin-left: 10px;
+.favo_y , .favo_g , .comment_g {
+  width: 23px;
+  height: 21px;
+  margin: 0 4px 0 10px;
+}
+
+.comment_g {
+  width: 21px;
+  height: 21px;
+  margin: 0 4px 0 10px;
+}
+
+.delete_g {
+  height: 21px;
+  width: 17px;
+}
+
+.favo_count , .comment_count{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.comment_count_h {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 4px;
+  line-height: 25px;
 }
 
 /*投稿詳細部分*/
 .post_show {
   width: 600px;
-  margin: 120px auto 0;
+  margin: 120px auto 40px;
   border: 1px solid #e6e6e6;
   border-radius: 6px;
   position: relative;
@@ -585,7 +602,7 @@ cursor: pointer;
 
 /*会員一覧部分*/
 .customers_list {
-  margin: 0 auto;
+  margin: 0 auto 40px;
   width: 600px;
 }
 

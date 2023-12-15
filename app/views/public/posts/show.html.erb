@@ -18,7 +18,9 @@
 
     <div class="show_comment_favo">
       <% if @post.customer == current_customer %>
-        <%= link_to "削除", public_post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+        <%= link_to public_post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+          <img src="/assets/delete.png" alt: "削除" class="delete_g">
+        <% end %>
       <% end %>
 
       <div id="comment_counter" class="favo">
