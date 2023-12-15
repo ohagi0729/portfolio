@@ -1,18 +1,18 @@
-<h3 class="page_title">管理者ログイン</h3>
-<div class="form_wrap">
+<h3 class="page_title">ログイン（管理用）</h3>
+<div class="login_form_wrap">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <div class="form_flex">
+    <div class="login_form_flex">
       <p>メールアドレス</p>
       <div>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"login_form_control" %>
       </div>
     </div>
 
-    <div class="form_flex">
+    <div class="login_form_flex_last">
       <p>パスワード</p>
       <div>
-        <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
+        <%= f.password_field :password, autocomplete: "current-password", class:"login_form_control" %>
       </div>
     </div>
 
@@ -21,7 +21,7 @@
       <%#= f.label :remember_me %>
     <%# end %>
 
-    <div class="form_flex">
+    <div class="login_form_flex_btn">
       <%= link_to 'キャンセル', root_path, class:"btn_g" %>
       <%= f.submit "ログイン",class: "btn_y" %>
     </div>

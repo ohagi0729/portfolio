@@ -1,15 +1,15 @@
 <h3 class="page_title">画像を投稿する</h3>
-<div class="form_wrap_prf">
+<div class="post_form_wrap">
   <%= form_for [:public, @post], local: true do |f| %>
-  <div class="form_flex">
+  <div class="post_form_flex">
     <p>投稿画像</p>
-    <%= f.file_field :image, accept: "image/*", class: "form-control_img"  %><br>
+    <%= f.file_field :image, accept: "image/*", class: "post_form_control_img" %><br>
   </div>
-  <div class="form_flex form_flex_cap">
+  <div class="post_form_flex_cap">
     <p>投稿文</p>
-    <%= f.text_area :caption, rows:"3", placeholder:"ここに投稿文を記載する", class: "form-control_cap"  %>
+    <%= f.text_area :caption, rows:"3", placeholder:"ここに投稿文を記載する", class: "post_form_control_cap"  %>
   </div>
-  <div class="form_flex">
+  <div class="post_form_flex_btn">
     <%= link_to "キャンセル", public_posts_path, class: "btn_g" %>
     <%= f.submit '投稿する' , class: "btn_y" %>
   </div>

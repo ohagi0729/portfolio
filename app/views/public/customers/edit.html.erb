@@ -1,33 +1,33 @@
 <h3 class="page_title">プロフィールを編集する</h3>
-<div class="form_wrap">
+<div class="prf_form_wrap">
   <%= form_with model: @customer, url: public_customer_path(@customer), local: true, method: :patch do |f| %>
 
-  <div class="form_flex_prf">
+  <div class="prf_form_flex">
     <p >プロフィール画像</p>
     <div>
-      <%= f.file_field :profile_image, class: "form-control_img", accept: 'image/*' %>
+      <%= f.file_field :profile_image, class: "prf_form_control_img", accept: 'image/*' %>
     </div>
   </div>
 
-  <div class="form_flex_prf">
+  <div class="prf_form_flex">
     <p >ユーザーネーム</p>
     <div>
-      <%= f.text_field :name, autofocus: true, class: "form-control" %>
+      <%= f.text_field :name, autofocus: true, class: "prf_form_control" %>
     </div>
   </div>
 
-  <div class="form_flex_prf form_flex_int">
+  <div class="prf_form_flex_int">
     <p >自己紹介</p>
     <div class="form-group">
-      <%= f.text_area :introduction, class: "form-control_int" %>
+      <%= f.text_area :introduction, class: "prf_form_control_int" %>
     </div>
   </div>
 
-  <div class="form_flex_prf form_flex_int">
+  <div class="prf_form_flex_btn">
     <%= link_to  'キャンセル',public_customer_path(current_customer), class: 'btn_g' %>
     <%= f.submit '更新する', class: 'btn_y' %>
   </div>
 
-  <p><%= link_to '退会はこちら >', public_customers_confirm_path %></p>
+  <p class="prf_form_withdrawal"><%= link_to '退会はこちら ＞', public_customers_confirm_path %></p>
   <% end %>
 </div>

@@ -89,6 +89,18 @@ footer {
   cursor: pointer;
 }
 
+.btn_y_ss {
+  width: 80px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  background-color: #ffea00;
+  border: 0px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
 .btn_g {
   width: 168px;
   height: 40px;
@@ -96,7 +108,7 @@ footer {
   display: inline-block;
   text-align: center;
   line-height: 40px;
-  background-color: #ccc;
+  background-color: #e6e6e6;
   border: 0px;
   border-radius: 20px;
   font-weight: bold;
@@ -109,11 +121,23 @@ footer {
   display: inline-block;
   text-align: center;
   line-height: 30px;
-  background-color: #ccc;
+  background-color: #e6e6e6;
   border: 0px;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.btn_g_ss {
+  width: 80px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  background-color: #e6e6e6;
+  border: 0px;
+  border-radius: 20px;
+  font-weight: bold;
 }
 
 .post_btn {
@@ -173,6 +197,16 @@ footer {
   line-height: 40px;
 }
 
+.header_logo a {
+  width: 186px;
+  display: block;
+cursor: pointer;
+}
+
+.header_logo a img {
+  width: 100%;
+}
+
 .search_form {  /*検索フォーム外枠*/
   height: 40px;
   display: flex;
@@ -196,6 +230,10 @@ footer {
 
 .search_form select:focus {
   outline: none;
+}
+
+.search_btn {
+  margin-right: 10px;
 }
 
 .search_form input[type="text"] {  /*検索フォーム入力部分*/
@@ -240,8 +278,10 @@ footer {
 .mv_bg {
   width: 100%;
   height: 100vh;
-  background-color: #e6e6e6;
-    display: flex;
+  background-image: url("nekolog_top.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -253,6 +293,7 @@ footer {
   text-align: center;
   border-radius: 6px;
   background-color: #fff;
+  filter: drop-shadow(0 6px 12px #767676);
 }
 
 .top_copy  {
@@ -394,8 +435,8 @@ footer {
   font-size: 14px;
 }
 
-/*フォーム部分--------------------------------*/
-.form_wrap {
+/*新規登録フォーム部分*/
+.sinup_form_wrap {
   width: 800px;
   padding: 40px;
   margin: 0 auto;
@@ -403,39 +444,47 @@ footer {
   border: 1px solid #e6e6e6;
 }
 
-.form_flex {
+.sinup_form_flex {
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content:center
 }
 
-.form_flex p {
+.sinup_form_flex p {
   width: 150px;
   font-weight: bold;
 }
 
-.form-control {
+.sinup_form_control {
   width: 300px;
   height: 30px;
+  padding: 8px 10px;
   border: 1px solid #e6e6e6;
 }
 
-.form-control_img {/*投稿画像フォーム調整*/
-  width: 300px;
-}
-
-.form_flex_cap {/*投稿文頭揃え*/
+.sinup_form_flex_last {
+  margin-bottom: 40px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content:center;
 }
 
-.form-control_cap {/*投稿文フォーム調整*/
-  width: 300px;
-  height: 100px;
+.sinup_form_flex_last p {
+  width: 150px;
+  font-weight: bold;
 }
 
-.form_wrap_prf {/*自己紹介*/
+.sinup_form_flex_btn {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+
+/*ログインフォーム部分*/
+.login_form_wrap {
   width: 800px;
   padding: 40px;
   margin: 0 auto;
@@ -443,28 +492,96 @@ footer {
   border: 1px solid #e6e6e6;
 }
 
-.form_flex_prf {/*自己紹介*/
+.login_form_flex {
   margin-bottom: 20px;
   display: flex;
+  align-items: center;
+  justify-content:center
 }
 
-.form_flex_prf p {/*自己紹介*/
+.login_form_flex p {
   width: 150px;
   font-weight: bold;
 }
 
-.form_flex_int {/*自己紹介頭揃え*/
-  display: flex;
-  align-items: flex-start;
+.login_form_control {
+  width: 300px;
+  height: 30px;
+  padding: 8px 10px;
+  border: 1px solid #e6e6e6;
 }
 
-.form-control_int {/*自己紹介フォーム調整*/
-  width: 540px;
-  height: 100px;
-  padding: 8px 0 0 10px;
-  line-height: 30px;
+.login_form_flex_last {
+  margin-bottom: 40px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
 }
-/*フォーム部分--------------------------------*/
+
+.login_form_flex_last p {
+  width: 150px;
+  font-weight: bold;
+}
+
+.login_form_flex_btn {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+
+/*投稿フォーム部分*/
+.post_form_wrap {
+  width: 800px;
+  padding: 40px;
+  margin: 0 auto;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
+}
+
+.post_form_flex {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content:center
+}
+
+.post_form_flex p {
+  width: 100px;
+  font-weight: bold;
+}
+
+.post_form_control_img {
+  width: 300px;
+}
+
+.post_form_flex_cap {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-start;;
+  justify-content:center
+}
+
+.post_form_flex_cap p {
+  width: 100px;
+  font-weight: bold;
+}
+
+.post_form_control_cap {
+  width: 300px;
+  height: 100px;
+  padding: 8px 10px;
+}
+
+.post_form_flex_btn {
+  margin-bottom: 0px;
+  display: flex;
+  align-items: flex-start;;
+  justify-content:center
+}
+
 
 /*会員一覧部分*/
 .customers_list {
@@ -544,6 +661,62 @@ footer {
   line-height: 30px;
 }
 
+/*プロフィール編集フォーム*/
+.prf_form_wrap {
+  width: 800px;
+  padding: 40px;
+  margin: 0 auto;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
+}
+
+.prf_form_flex {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.prf_form_flex p {
+  width: 150px;
+  font-weight: bold;
+}
+
+.prf_form_control {
+  width: 300px;
+  height: 30px;
+  padding: 8px 10px;
+  border: 1px solid #e6e6e6;
+}
+
+.prf_form_flex_int {
+  display: flex;
+  align-items: flex-start;
+}
+
+.prf_form_flex_int p {
+  width: 150px;
+  font-weight: bold;
+}
+
+.prf_form_control_int {
+  width: 540px;
+  height: 100px;
+  margin-bottom: 20px;
+  padding: 8px 0 0 10px;
+  line-height: 30px;
+}
+
+.prf_form_flex_btn {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.prf_form_withdrawal {
+  font-weight: bold;
+  text-align: center;
+}
+
 /*退会ページ部分*/
 .confirm_wrap {
   width: 800px;
@@ -564,10 +737,48 @@ footer {
   margin-bottom: 30px;
 }
 
+.customer_table {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.customer_table th ,.customer_table td {
+  padding: 10px;
+  border-bottom: 1px solid #e6e6e6;
+  font-weight: bold;
+}
+
+.customer_table th {
+  background-color: #e6e6e6;
+}
+
+.table_id {
+  width: 14%;
+  text-align: center;
+}
+
+.table_name {
+  display: flex;
+  align-items: center;
+}
+
+.table_name_margin {
+  margin-left: 10px;
+}
+
+.table_email {
+  width: 33%;
+
+}
+
+.table_status {
+  width: 20%;
+  text-align: center;
+}
+
 /*フッター部分*/
 #footer {
   height: 30px;
-  margin-top: 40px;
   text-align: center;
   background-color: #000;
 }

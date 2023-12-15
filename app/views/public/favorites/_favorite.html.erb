@@ -1,13 +1,13 @@
 <% if post.favorited_by?(current_customer) %>
   <p>
     <%= link_to public_post_favorites_path(post), method: :delete, remote: true do %>
-      ♥<%= post.favorites_by_active_customer.count %> いいね
+      <img src="/assets/favo_y.png" alt: "いいね" class="favo_y"><%= post.favorites_by_active_customer.count %>
     <% end %>
   </p>
 <% else %>
   <p>
     <%= link_to public_post_favorites_path(post), method: :post, remote: true do %>
-      ♡<%= post.favorites_by_active_customer.count %> いいね
+      <img src="/assets/favo_g.png" alt: "いいね" class="favo_g"><%= post.favorites_by_active_customer.count %>
     <% end %>
   </p>
 <% end %>
