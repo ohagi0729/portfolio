@@ -20,15 +20,24 @@
         <%= link_to public_post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
           <img src="/assets/delete.png" alt: "削除" class="delete_g">
         <% end %>
+      <% elsif admin_signed_in? %>
+        <%= link_to public_post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
+          <img src="/assets/delete.png" alt: "削除" class="delete_g">
+        <% end %>
       <% end %>
 
       <div id="comment_counter" class="favo">
         <%= render "/public/post_comments/counter", post_comments: @post_comments %>
       </div>
 
-      <div id="favorite_btn_<%= @post.id %>" class="favo">
-        <%= render '/public/favorites/favorite', post: @post %>
-      </div>
+      <% if current_customer %>
+        <div id="favorite-btn_<%= @post.id %>" class="favo">
+          <%= render '/public/favorites/favorite', post: @post %>
+        </div>
+      <% elsif admin_signed_in? %>
+        <%= render '/admin/favorites/favorite', post: @post %>
+      <% end %>
+
     </div>
 
     <%= render "/public/post_comments/form", post: @post, post_comment: @post_comment %>

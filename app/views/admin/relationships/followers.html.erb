@@ -1,0 +1,6 @@
+<h3 class="page_title">フォロワー</h3>
+<% if @customers.exists? %>
+  <%= render "/public/customers/list", customers: @customers %>
+<% else %>
+  <p>ユーザーはいません</p>
+<% end %>

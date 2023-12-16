@@ -1,6 +1,0 @@
-<th>ジャンル検索</th>
-<% genres.each do |genre| %>
-  <% if genre.respond_to?(:is_active) && genre.is_active == true %>
-    <%= link_to genre.name, public_items_path(genre_id: genre.id) %>
-  <% end %>
-<% end %>

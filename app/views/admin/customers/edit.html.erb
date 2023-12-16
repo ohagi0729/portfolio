@@ -1,7 +1,7 @@
 <h3 class="page_title">プロフィールを編集する（管理）</h3>
 
 <div class="prf_form_wrap">
-  <%= form_with model: @customer, url: public_customer_path(@customer), local: true, method: :patch do |f| %>
+  <%= form_with model: @customer, url: admin_customer_path(@customer), local: true, method: :patch do |f| %>
 
   <div class="prf_form_flex">
     <p >プロフィール画像</p>

@@ -11,12 +11,12 @@
           <p class="customer_name_b"><%= @customer.name %></p>
           <div class="counter_flex">
             <div id="followings-counter_<%= @customer.id %>">
-              <%= link_to public_customer_followings_path(@customer) do %>
+              <%= link_to admin_customer_followings_path(@customer) do %>
                 <%= render "/public/relationships/followings_counter", customer: @customer %>
               <% end %>
             </div>
             <div id="followers-counter_<%= @customer.id %>">
-              <%= link_to public_customer_followers_path(@customer) do %>
+              <%= link_to admin_customer_followers_path(@customer) do %>
                 <%= render "/public/relationships/followers_counter", customer: @customer %>
               <% end %>
             </div>

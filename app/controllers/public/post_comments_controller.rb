@@ -5,7 +5,7 @@ class Public::PostCommentsController < ApplicationController
       if !post.customer.is_active
          redirect_to public_post_path
       end
-
+     @post_comments = post.post_comments.joins(:customer).where(customer: {is_active: true })
      @comment = current_customer.post_comments.new(post_comment_params)
      @comment.post_id = post.id
      @comment.save
@@ -16,6 +16,7 @@ class Public::PostCommentsController < ApplicationController
       if !post_comment.post.customer.is_active
          redirect_to public_post_path
       end
+      @post_comments = post_comment.post.post_comments.joins(:customer).where(customer: {is_active: true })
       @comment = post_comment.destroy
    end
 
