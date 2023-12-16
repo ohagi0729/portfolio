@@ -11,7 +11,7 @@
   <tr>
     <td class="table_id"><%= customer.id %></th>
     <td class="table_name">
-        <%= link_to public_customers_path(customer), class: 'profile_img_s' do %>
+        <%= link_to admin_customer_path(customer), class: 'profile_img_s' do %>
           <%= image_tag customer.get_profile_image %>
         <% end %>
         <span class="table_name_margin"><%= customer.name %></span>

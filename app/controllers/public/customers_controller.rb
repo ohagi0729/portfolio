@@ -3,6 +3,7 @@ class Public::CustomersController < ApplicationController
   before_action :ensure_guest_customer, only: [:edit]
   before_action :active_customer, only:[:show,:edit,:update,:followings,:followers,:favorites]
 
+
   def index
     @customers = Customer.where(is_active:true)
     @post = Post.new

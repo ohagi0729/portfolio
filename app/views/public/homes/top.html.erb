@@ -1,15 +1,20 @@
 <div class="mv_bg">
   <div class="top_text_wrap">
+
     <p class="top_copy">＼ネコ好きのための写真共有SNS／</p>
     <h2 class="top_logo"><img src="assets/nekolog_logo.png" alt="nekolog_logo"></h2>
     <p class="top_text">ネコに関する情報や可愛らしい写真をシェアし、ネコ好き同士が交流できるSNS！<br>
     ネコを飼っている方や興味がある方が日々の喜びや悩みを共有したり、<br>
     新たな情報や楽しみを見つけたりするプラットフォームとして活用できます。</p>
 
-    <div class="top_btn">
+    
       <%= link_to "新規登録", new_customer_registration_path, class: 'btn_g' %>
       <%= link_to "ログイン", new_customer_session_path, class: 'btn_y' %>
+
+
+    <div class="guestlogin-wrap">
+      <%= link_to "ログインせずに使用する ＞", public_customers_guest_sign_in_path, method: :post, class: "guestlogin" %>
     </div>
-    <%= link_to "ログインせずに使用する ＞", public_customers_guest_sign_in_path, method: :post, class: "guestlogin" %>
+
   </div>
 </div>

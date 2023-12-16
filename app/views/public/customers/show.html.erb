@@ -45,9 +45,13 @@
   </div>
 </div>
 
-
 <% if @posts.any? %>
   <%= render partial: 'public/posts/list', locals: { posts: @posts } %>
 <% else %>
   <p>まだ投稿がありません。</p>
 <% end %>
+
+<div class="bottom_btn">
+  <%= render '/public/posts/post_btn' %>
+  <a class="top-btn top_btn_bottom"><img src="/assets/top_btn.png" alt: "トップへ戻る" class="top_btn"></a>
+</div>

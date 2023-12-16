@@ -15,7 +15,6 @@
 
     <p class="post_caption"><%= @post.caption %></p>
 
-
     <div class="show_comment_favo">
       <% if @post.customer == current_customer %>
         <%= link_to public_post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
@@ -24,7 +23,7 @@
       <% end %>
 
       <div id="comment_counter" class="favo">
-       <%= render "/public/post_comments/counter", post_comments: @post_comments %>
+        <%= render "/public/post_comments/counter", post_comments: @post_comments %>
       </div>
 
       <div id="favorite_btn_<%= @post.id %>" class="favo">
@@ -38,4 +37,9 @@
       <%= render "/public/post_comments/index", post_comments: @post_comments %>
     </div>
   </div>
+</div>
+
+<div class="bottom_btn">
+  <%= render '/public/posts/post_btn' %>
+  <a class="top-btn top_btn_bottom"><img src="/assets/top_btn.png" alt: "トップへ戻る" class="top_btn"></a>
 </div>

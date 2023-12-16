@@ -304,11 +304,12 @@ cursor: pointer;
   line-height: 34px;
 }
 
-.top_btn {
-  margin-bottom: 30px;
+.guestlogin-wrap {
+  margin-top: 30px;
 }
 
 .guestlogin {
+  margin-top: 30px;
   font-weight: bold;
 }
 
@@ -497,6 +498,13 @@ cursor: pointer;
   display: flex;
   align-items: center;
   justify-content:center;
+}
+
+.post_form_error {
+  width: 800px;
+  margin: 0 auto 40px;
+  font-weight: bold;
+  line-height: 30px;
 }
 
 
@@ -718,7 +726,7 @@ cursor: pointer;
 .prf_form_control_int {
   width: 540px;
   height: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   padding: 8px 0 0 10px;
   line-height: 30px;
 }
@@ -727,6 +735,7 @@ cursor: pointer;
   display: flex;
   align-items: center;
   justify-content:center;
+  margin-bottom: 30px;
 }
 
 .prf_form_withdrawal {
@@ -754,8 +763,9 @@ cursor: pointer;
   margin-bottom: 30px;
 }
 
+/*管理者側会員一覧部分*/
 .customer_table {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 

@@ -33,7 +33,7 @@
   </div>
 
   <div class="prf_form_flex_btn">
-    <%#= link_to  'キャンセル',public_customer_path(current_customer), class: 'btn_g' %>
+    <%= link_to  'キャンセル',admin_customer_path(@customer), class: 'btn_g' %>
     <%= f.submit '更新する', class: 'btn_y' %>
   </div>
   <% end %>

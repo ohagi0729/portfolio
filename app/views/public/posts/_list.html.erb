@@ -20,10 +20,16 @@
 
         <div class="comment_favo">
           <img src="/assets/comment.png" alt: "コメント" class="comment_g">
-            <%= link_to "#{post.post_comments_by_active_customer.count}", public_post_path(post.id), class: 'comment_count_h' %>
-          <div id="favorite-btn_<%= post.id %>" class="favo">
-            <%= render '/public/favorites/favorite', post: post %>
-          </div>
+          <%= link_to "#{post.post_comments_by_active_customer.count}", public_post_path(post.id), class: 'comment_count_h' %>
+
+          <% if current_customer %>
+            <div id="favorite-btn_<%= post.id %>" class="favo">
+              <%= render '/public/favorites/favorite', post: post %>
+            </div>
+          <% elsif admin_signed_in? %>
+            <%= render '/admin/favorites/favorite', post: post %>
+          <% end %>
+
         </div>
       </div>
 

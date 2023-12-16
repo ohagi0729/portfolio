@@ -15,7 +15,11 @@ class Admin::CustomersController < ApplicationController
   end
 
   def update
-    @customer.update(customer_params) ? (redirect_to admin_customer_path(@customer)) : (render :edit)
+    if @customer.update(customer_params)
+      redirect_to public_customer_path(@customer), notice: "You have updated user successfully."
+    else
+      render "edit"
+    end
   end
 
 

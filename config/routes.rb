@@ -12,7 +12,6 @@ devise_for :admin, controllers: {
   namespace :admin do
     resources :posts, only: [:index, :show, :destroy]
     resources :customers, only: [:index, :show, :edit, :update]
-    resources :genres, only: [:index, :create, :edit, :update]
   end
 
 # 顧客用

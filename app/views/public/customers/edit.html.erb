@@ -1,4 +1,17 @@
 <h3 class="page_title">プロフィールを編集する</h3>
+
+<% if @customer.errors.any? %>
+<div class="post_form_error">
+  <%= @customer.errors.count %>件のエラーが発生したニャΣ(ФωФ=ﾉ)ﾉ
+
+  <ul>
+    <% @customer.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
 <div class="prf_form_wrap">
   <%= form_with model: @customer, url: public_customer_path(@customer), local: true, method: :patch do |f| %>
 

@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   has_many :post_comments, dependent: :destroy
 
   validates :image, presence: true
+  validates :caption, presence: true
 
   def get_image
     unless image.attached?

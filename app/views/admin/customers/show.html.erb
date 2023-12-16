@@ -30,15 +30,7 @@
       </div>
 
       <div clss="folow_edit">
-        <% if current_customer != @customer %>
-          <div id="follow-btn_<%= @customer.id %>">
-            <%= render "/public/relationships/follow_btn", customer: @customer %>
-          </div>
-        <% else %>
-          <% unless @customer.guest_customer? %>
-            <%= link_to "編集", edit_public_customer_path(current_customer), class: "btn_g_s" %>
-          <% end %>
-        <% end %>
+        <%= link_to "編集", edit_admin_customer_path(@customer), class: "btn_y_s" %>
       </div>
     </div>
     <p class="customer_show_text"><%= @customer.introduction %></p>
