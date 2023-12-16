@@ -43,3 +43,10 @@
 <% else %>
   <p>まだ投稿がありません。</p>
 <% end %>
+
+<div class="bottom_btn">
+  <% if current_customer %>
+    <%= render '/public/posts/post_btn' %>
+  <% end %>
+  <a class="top-btn top_btn_bottom"><img src="/assets/top_btn.png" alt: "トップへ戻る" class="top_btn"></a>
+</div>
