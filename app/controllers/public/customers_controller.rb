@@ -1,5 +1,5 @@
 class Public::CustomersController < ApplicationController
-  before_action :ensure_correct_customer, only: [:edit, :update]
+  before_action :ensure_correct_customer, only: [:edit, :update, :confirm]
   before_action :ensure_guest_customer, only: [:edit]
   before_action :active_customer, only:[:show,:edit,:update,:followings,:followers,:favorites]
 
@@ -55,6 +55,9 @@ class Public::CustomersController < ApplicationController
     redirect_to root_path
   end
 
+  def confirm
+  end
+
 private
 
   def customer_params
@@ -62,8 +65,12 @@ private
   end
 
   def ensure_correct_customer
-    @customer = Customer.find(params[:id])
-    unless current_customer == @customer
+  @customer = Customer.find_by(id: params[:id])
+
+    if @customer.nil?
+      flash[:alert] = "ユーザーが見つかりません"
+      redirect_to root_path
+    elsif current_customer != @customer
       flash[:alert] = "権限がありません"
       redirect_to root_path
     end

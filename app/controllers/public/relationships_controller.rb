@@ -1,5 +1,5 @@
 class Public::RelationshipsController < ApplicationController
-  before_action :authenticate_customer!
+  #before_action :authenticate_customer!
   before_action :active_customer, only:[:create,:destroy,:followings,:followers]
 
   def create

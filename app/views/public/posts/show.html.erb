@@ -1,7 +1,5 @@
 <div class="post_show">
-
   <%= image_tag @post.get_image, class: 'post_show_img' %>
-
   <div class="post_text">
     <div class="icon_neme_day">
       <%= link_to public_customer_path(@post.customer), class: 'profile_img_s' do %>
@@ -37,10 +35,11 @@
       <% elsif admin_signed_in? %>
         <%= render '/admin/favorites/favorite', post: @post %>
       <% end %>
-
     </div>
 
-    <%= render "/public/post_comments/form", post: @post, post_comment: @post_comment %>
+    <% if current_customer %>
+      <%= render "/public/post_comments/form", post: @post, post_comment: @post_comment %>
+    <% end %>
 
     <div id="comment_index">
       <%= render "/public/post_comments/index", post_comments: @post_comments %>

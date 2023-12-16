@@ -1,6 +1,0 @@
-<h3 class="page_title">フォロー中</h3>
-<% if @customer.exists? %>
-  <%= render "/public/customers/list", customers: @customer %>
-<% else %>
-  <p>ユーザーはいません</p>
-<% end %>
