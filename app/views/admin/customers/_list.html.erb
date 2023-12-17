@@ -1,0 +1,34 @@
+<table class="customer_table">
+  <tr>
+    <th>会員ID</th>
+    <th>ユーザーネーム</th>
+    <th>メールアドレス</th>
+    <th>ステータス</th>
+  </tr>
+  <% customers.each do |customer| %>
+  <tr>
+    <td class="table_id"><%= customer.id %></th>
+    <td class="table_name">
+        <%= link_to admin_customer_path(customer), class: 'profile_img_s' do %>
+          <%= image_tag customer.get_profile_image %>
+        <% end %>
+        <span class="table_name_margin"><%= customer.name %></span>
+    </td>
+    <td class="table_email"><%= customer.email %></td>
+    <td class="table_status">
+      <% if customer.is_active? %>
+        <span class="btn_y_ss">有効</span>
+      <% else %>
+        <span class="btn_g_ss">退会</span>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<div class="bottom_btn">
+  <% if current_customer %>
+    <%= render '/public/posts/post_btn' %>
+  <% end %>
+  <a class="top-btn top_btn_bottom"><img src="/assets/top_btn.png" alt: "トップへ戻る" class="top_btn"></a>
+</div>

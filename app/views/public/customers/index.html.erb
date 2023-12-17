@@ -1,2 +1,9 @@
 <h3 class="page_title">会員一覧</h3>
+
+<div>
+  <% if flash[:notice].present? %>
+    <span class="message"><%= flash[:notice] %></span>
+  <% end %>
+</div>
+
 <%= render 'list',customers: @customers %>

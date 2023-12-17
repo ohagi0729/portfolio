@@ -1,0 +1,6 @@
+<h3 class="page_title">検索結果</h3>
+<% if @range == "Customer" %>
+  <%= render "/admin/customers/list", customers: @customers %>
+<% else %>
+  <%= render "/public/posts/list", posts: @posts %>
+<% end %>

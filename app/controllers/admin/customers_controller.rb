@@ -17,18 +17,18 @@ class Admin::CustomersController < ApplicationController
 
   def update
     if @customer.update(customer_params)
-      redirect_to admin_customer_path(@customer), notice: "You have updated user successfully."
+      flash[:notice] = "プロフィールが更新されたニャン(`ФωФ’)✧"
+      redirect_to admin_customer_path(@customer)
     else
+      flash[:notice] = "プロフィールの更新に失敗したニャンΣ(ФωФ=ﾉ)ﾉ"
       render "edit"
     end
   end
 
-
-
   private
 
   def customer_params
-    params.require(:customer).permit(:name,:email,:is_active,:introduction)
+    params.require(:customer).permit(:name,:email,:is_active,:introduction,:profile_image)
   end
 
   def ensure_customer

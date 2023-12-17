@@ -1,4 +1,11 @@
 <h3 class="page_title">ログイン</h3>
+
+<div>
+  <% if flash[:notice].present? %>
+  <span class="message"><%= flash[:notice] %></span>
+  <% end %>
+</div>
+
 <div class="login_form_wrap">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 

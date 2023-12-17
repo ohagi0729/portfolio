@@ -166,6 +166,13 @@ footer {
   right: 10px;
 }
 
+.confirm_message {
+  max-width: 1020px;
+  margin: 0 auto;
+  display: block;
+  font-weight: bold;
+}
+
 .global_nav {
   margin-left: auto;
   font-weight: bold;

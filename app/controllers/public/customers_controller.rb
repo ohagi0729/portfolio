@@ -1,8 +1,7 @@
 class Public::CustomersController < ApplicationController
-  before_action :ensure_correct_customer, only: [:edit, :update, :confirm]
+  before_action :ensure_correct_customer, only: [:edit, :update, :confirm, :unsubscribe]
   before_action :ensure_guest_customer, only: [:edit]
   before_action :active_customer, only:[:show,:edit,:update,:followings,:followers,:favorites]
-
 
   def index
     @customers = Customer.where(is_active:true)
@@ -20,8 +19,10 @@ class Public::CustomersController < ApplicationController
 
   def update
     if @customer.update(customer_params)
-      redirect_to public_customer_path(@customer), notice: "You have updated user successfully."
+      flash[:notice] = "プロフィールが更新されたニャン(`ФωФ’)✧"
+      redirect_to public_customer_path(@customer)
     else
+      flash.now[:notice] = "プロフィールの更新に失敗したニャンΣ(ФωФ=ﾉ)ﾉ"
       render "edit"
     end
   end
@@ -48,10 +49,10 @@ class Public::CustomersController < ApplicationController
 
   def unsubscribe
     @customer = current_customer
-    # is_deletedカラムをtrueに変更することにより削除フラグを立てる
     @customer.update(is_active: false)
+    # byebug
     reset_session
-    flash[:notice] = "退会処理を実行いたしました"
+    flash.now[:notice] = "退会処理をしたニャン(´ΦωΦ`)"
     redirect_to root_path
   end
 
@@ -66,12 +67,11 @@ private
 
   def ensure_correct_customer
   @customer = Customer.find_by(id: params[:id])
-
     if @customer.nil?
-      flash[:alert] = "ユーザーが見つかりません"
+      flash.now[:notice] = "ユーザーが見つからないニャン(´ΦωΦ`)"
       redirect_to root_path
     elsif current_customer != @customer
-      flash[:alert] = "権限がありません"
+      flash.now[:notice] = "権限がないニャン(´ΦωΦ`)"
       redirect_to root_path
     end
   end
@@ -79,7 +79,7 @@ private
   def ensure_guest_customer
     @customer = Customer.find(params[:id])
     if @customer.guest_customer?
-      redirect_to customer_path(current_customer) , notice: "ゲストユーザーはプロフィール編集画面へ遷移できません。"
+      redirect_to customer_path(current_customer)
     end
   end
 
@@ -95,10 +95,10 @@ protected
     @customer = Customer.find_by(email: params[:customer][:email])
     if @customer
       if @customer.valid_password?(params[:customer][:password]) && (@customer.is_deleted == false)
-        flash[:notice] = "退会済みです。再度ご登録をしてご利用ください。"
+        flash.now[:notice] = "退会済みニャン　再度登録してニャン(´ΦωΦ`)"
         redirect_to new_customer_registration
       else
-        flash[:notice] = "項目を入力してください"
+        flash.now[:notice] = "項目を入力してニャン(´ΦωΦ`)"
       end
     end
   end

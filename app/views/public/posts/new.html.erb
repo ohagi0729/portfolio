@@ -1,16 +1,10 @@
 <h3 class="page_title">画像を投稿する</h3>
 
-<% if @post.errors.any? %>
-<div class="post_form_error">
-  <%= @post.errors.count %>件のエラーが発生したニャΣ(ФωФ=ﾉ)ﾉ
-
-  <ul>
-    <% @post.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+<div>
+  <% if flash[:notice].present? %>
+  <span class="message"><%= flash[:notice] %></span>
+  <% end %>
 </div>
-<% end %>
 
 <div class="post_form_wrap">
   <%= form_for [:public, @post], local: true do |f| %>

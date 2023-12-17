@@ -39,12 +39,12 @@ class Customer < ApplicationRecord
     followings.include?(user)
   end
 
+
   # activeのユーザーの投稿をいくついいねしたか数える
   def favorites_count
     favorites.joins(post: :customer).where(post: {customers: {is_active: true}}).count
   end
 
-  #enum is_active: {active: true, non_active: false}
 
   def get_profile_image
     profile_image.attached? ? profile_image : 'no_image.jpg'

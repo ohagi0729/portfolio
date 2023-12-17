@@ -11,8 +11,10 @@ class Public::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.customer_id = current_customer.id
     if @post.save
+      flash[:notice] = "投稿に成功したニャン(`ФωФ’)✧"
       redirect_to public_posts_path
     else
+      flash.now[:notice] = "投稿に失敗したニャンΣ(ФωФ=ﾉ)ﾉ"
       render :new
     end
   end

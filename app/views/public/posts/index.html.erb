@@ -1,2 +1,9 @@
 <h3 class="page_title">投稿一覧</h3>
+
+<div>
+  <% if flash[:notice].present? %>
+  <span class="message"><%= flash[:notice] %></span>
+  <% end %>
+</div>
+
 <%= render 'list', posts: @posts %>

@@ -11,7 +11,6 @@ devise_for :admin, controllers: {
 
   namespace :admin do
     resources :posts, only: [:index, :show, :destroy]
-    resources :customers, only: [:index, :show, :edit, :update]
     resources :customers, only: [:index,:show,:edit,:update] do
       resource :relationships, only: [:create, :destroy]
     	get "followings" => "relationships#followings", as: "followings"
@@ -20,6 +19,8 @@ devise_for :admin, controllers: {
         get :favorites
        end
     end
+
+    get "search" => "searches#search"
   end
 
 # 顧客用
@@ -30,13 +31,12 @@ devise_for :customers, controllers: {
 }
 
   namespace :public do
-    #root 'homes#top'
-
-  get 'customers/confirm', to: 'customers#confirm'
-  patch 'customers/unsubscribe', to: 'customers#unsubscribe', as: 'customers/unsubscribe'
+  #root 'homes#top'
 
   devise_scope :customer do
     post "customers/guest_sign_in", to: "customers/sessions#guest_sign_in"
+    get 'customers/confirm/:id', to: 'customers#confirm'
+    patch 'customers/unsubscribe', to: 'customers#unsubscribe', as: 'customers/unsubscribe'
   end
 
   resources :posts, only: [:new, :create, :index, :show, :destroy] do
