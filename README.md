@@ -31,4 +31,5 @@
 - IDE：Cloud9
 ​
 ## 使用素材
-未定
+- ぱくたそ : https://www.pakutaso.com/
+- icooon-mono : https://icooon-mono.com/

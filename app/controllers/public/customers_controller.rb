@@ -1,5 +1,5 @@
 class Public::CustomersController < ApplicationController
-  before_action :ensure_correct_customer, only: [:edit, :update, :confirm, :unsubscribe]
+  before_action :ensure_correct_customer, only: [:edit, :update, :confirm]
   before_action :ensure_guest_customer, only: [:edit]
   before_action :active_customer, only:[:show,:edit,:update,:followings,:followers,:favorites]
 
