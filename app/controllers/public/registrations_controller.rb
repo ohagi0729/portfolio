@@ -51,13 +51,15 @@ class Public::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
+
   def after_sign_up_path_for(resource)
-    super(resource)
+    flash[:notice] = "新規登録が完了したニャ(=ↀωↀ=)"
+    public_customer_path(current_customer)
   end
 
-  def after_update_path_for(resource)
-    mypage_path
-  end
+  # def after_update_path_for(resource)
+  #   mypage_path
+  # end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

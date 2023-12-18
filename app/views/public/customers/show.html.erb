@@ -1,15 +1,21 @@
 <div class="profile_bg">
 
-<div>
+<div class="message-container">
+  <% if flash[:danger].present? %>
+    <div class="message">
+      <%= flash[:danger] %>
+    </div>
+  <% end %>
   <% if flash[:notice].present? %>
-    <span class="message"><%= flash[:notice] %></span>
+    <div class="message">
+      <%= flash[:notice] %>
+    </div>
   <% end %>
 </div>
 
   <div class="profile">
     <div class="profile_btn">
       <div class="icon_neme_customer">
-
         <div class="profile_name_img">
           <%= image_tag @customer.get_profile_image, class: "profile_img_b" %>
         </div>

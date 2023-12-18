@@ -1,10 +1,15 @@
 <h3 class="page_title">新規登録</h3>
 
-<div>
-  <% if flash[:notice].present? %>
-  <span class="message"><%= flash[:notice] %></span>
-  <% end %>
-</div>
+<% if flash[:danger].present? %>
+  <div class="message">
+    <%= flash[:danger] %>
+  </div>
+<% end %>
+<% if flash[:notice].present? %>
+  <div class="message">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
 
 <div class="sinup_form_wrap">
   <%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', local: true do |f| %>

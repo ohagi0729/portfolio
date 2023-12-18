@@ -17,10 +17,10 @@ class Admin::CustomersController < ApplicationController
 
   def update
     if @customer.update(customer_params)
-      flash[:notice] = "プロフィールが更新されたニャン(`ФωФ’)✧"
+      flash[:notice] = "プロフィールが更新されたニャ(=ↀωↀ=)✧"
       redirect_to admin_customer_path(@customer)
     else
-      flash[:notice] = "プロフィールの更新に失敗したニャンΣ(ФωФ=ﾉ)ﾉ"
+      flash[:notice] = "ユーザーネームは必須ニャ(=ↀωↀ=)"
       render "edit"
     end
   end

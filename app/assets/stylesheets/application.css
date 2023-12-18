@@ -41,7 +41,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  filter: drop-shadow(0 6px 12px #f0f0f0);
+  filter: drop-shadow(0 6px 12px #c0c0c0);
   position: fixed;
   top: 0;
   width: 100%;
@@ -166,13 +166,6 @@ footer {
   right: 10px;
 }
 
-.confirm_message {
-  max-width: 1020px;
-  margin: 0 auto;
-  display: block;
-  font-weight: bold;
-}
-
 .global_nav {
   margin-left: auto;
   font-weight: bold;
@@ -271,6 +264,21 @@ cursor: pointer;
   text-align: center;
   border: 1px solid #e6e6e6;
   border-radius: 20px;
+}
+
+/*フラッシュメッセージ部分*/
+
+.message-container {
+  text-align: center;
+}
+
+.message {
+  display: inline-block;
+  padding: 8px 40px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  font-weight: bold;
+  background-color: #ffea00;
 }
 
 /*トップページ部分*/

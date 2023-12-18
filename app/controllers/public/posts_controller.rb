@@ -11,10 +11,10 @@ class Public::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.customer_id = current_customer.id
     if @post.save
-      flash[:notice] = "投稿に成功したニャン(`ФωФ’)✧"
+      flash[:notice] = "投稿に成功したニャ(=ↀωↀ=)✧"
       redirect_to public_posts_path
     else
-      flash.now[:notice] = "投稿に失敗したニャンΣ(ФωФ=ﾉ)ﾉ"
+      flash.now[:notice] = "投稿に失敗したニャ(=ↀωↀ=)"
       render :new
     end
   end
@@ -50,5 +50,4 @@ class Public::PostsController < ApplicationController
   def customer_params
     params.require(:customer).permit(:name, :profile_image, :introduction)
   end
-
 end

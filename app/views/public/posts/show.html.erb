@@ -1,9 +1,3 @@
-<div>
-  <% if flash[:notice].present? %>
-    <span class="message"><%= flash[:notice] %></span>
-  <% end %>
-</div>
-
 <div class="post_show">
   <%= image_tag @post.get_image, class: 'post_show_img' %>
   <div class="post_text">
@@ -39,7 +33,13 @@
           <%= render '/public/favorites/favorite', post: @post %>
         </div>
       <% elsif admin_signed_in? %>
-        <%= render '/admin/favorites/favorite', post: @post %>
+        <div class="favo">
+          <%= render '/admin/favorites/favorite', post: @post %>
+        </div>
+      <% else %>
+        <div class="favo">
+          <%= render '/admin/favorites/favorite', post: @post %>
+        </div>
       <% end %>
     </div>
 

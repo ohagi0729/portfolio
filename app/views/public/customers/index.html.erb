@@ -1,8 +1,15 @@
 <h3 class="page_title">会員一覧</h3>
 
-<div>
+<div class="message-container">
+  <% if flash[:danger].present? %>
+    <div class="message">
+      <%= flash[:danger] %>
+    </div>
+  <% end %>
   <% if flash[:notice].present? %>
-    <span class="message"><%= flash[:notice] %></span>
+    <div class="message">
+      <%= flash[:notice] %>
+    </div>
   <% end %>
 </div>
 

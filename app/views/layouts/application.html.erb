@@ -13,19 +13,16 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <!--<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>-->
   </head>
 
   <body>
     <%= render "layouts/header" %>
+    
     <main>
       <%= yield %>
     </main>
 
     <%= render "layouts/footer" %>
 
-    <!--<script src="app/javascript/jquery.min.js"></script>-->
-    <!--<script src="app/javascript/script.js"></script>-->
   </body>
 </html>

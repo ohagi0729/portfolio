@@ -31,7 +31,6 @@ devise_for :customers, controllers: {
 }
 
   namespace :public do
-  #root 'homes#top'
 
   devise_scope :customer do
     post "customers/guest_sign_in", to: "customers/sessions#guest_sign_in"

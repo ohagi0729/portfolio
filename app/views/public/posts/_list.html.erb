@@ -7,7 +7,6 @@
 
       <div class="post_text">
         <div class="icon_neme_day">
-
           <% if admin_signed_in? %>
             <%= link_to admin_customer_path(post.customer), class: 'profile_img_s' do %>
               <%= image_tag post.customer.get_profile_image %>
@@ -35,9 +34,14 @@
               <%= render '/public/favorites/favorite', post: post %>
             </div>
           <% elsif admin_signed_in? %>
-            <%= render '/admin/favorites/favorite', post: post %>
+            <div class="favo">
+              <%= render '/admin/favorites/favorite', post: post %>
+            </div>
+          <% else %>
+            <div class="favo">
+              <%= render '/admin/favorites/favorite', post: post %>
+            </div>
           <% end %>
-
         </div>
       </div>
 
