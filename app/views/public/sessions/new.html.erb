@@ -1,5 +1,6 @@
 <h3 class="page_title">ログイン</h3>
 
+<!--フラッシュメッセージ-->
 <div class="message-container">
   <% if flash[:danger].present? %>
     <div class="message">
@@ -11,17 +12,17 @@
       <%= flash[:notice] %>
     </div>
   <% end %>
+</div>
 
+<!--ログインフォーム-->
 <div class="login_form_wrap">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
     <div class="login_form_flex">
       <p>メールアドレス</p>
       <div>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"login_form_control" %>
       </div>
     </div>
-
     <div class="login_form_flex_last">
       <p>パスワード</p>
       <div>
@@ -29,11 +30,7 @@
       </div>
     </div>
 
-    <%# if devise_mapping.rememberable? %>
-      <%#= f.check_box :remember_me %>
-      <%#= f.label :remember_me %>
-    <%# end %>
-
+<!--ログイン、キャンセルボタン-->
     <div class="login_form_flex_btn">
       <%= link_to 'キャンセル', root_path, class:"btn_g" %>
       <%= f.submit "ログイン",class: "btn_y" %>

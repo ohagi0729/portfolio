@@ -1,11 +1,13 @@
 <div class="post_wrap">
   <% posts.each do |post| %>
     <div class="post">
+      <!--会員アイコン-->
       <%= link_to public_post_path(post.id) do %>
         <%= image_tag post.image, class: 'post_img' %>
       <% end %>
 
       <div class="post_text">
+        <!--アイコン横のユーザーネーム、日付-->
         <div class="icon_neme_day">
           <% if admin_signed_in? %>
             <%= link_to admin_customer_path(post.customer), class: 'profile_img_s' do %>
@@ -16,41 +18,41 @@
               <%= image_tag post.customer.get_profile_image %>
             <% end %>
           <% end %>
-
           <div class="profile_flex">
             <p class="customer_name"><%= post.customer.name %></p>
             <p class="post_day"><%= post.created_at.strftime('%Y年%m月%d日') %></p>
           </div>
         </div>
 
+        <!--投稿分-->
         <p class="post_caption"><%= post.caption %></p>
 
+        <!--コメント、いいねカウンター-->
         <div class="comment_favo">
           <img src="/assets/comment.png" alt: "コメント" class="comment_g">
           <%= link_to "#{post.post_comments_by_active_customer.count}", public_post_path(post.id), class: 'comment_count_h' %>
-
           <% if current_customer %>
             <div id="favorite-btn_<%= post.id %>" class="favo">
               <%= render '/public/favorites/favorite', post: post %>
             </div>
-          <% elsif admin_signed_in? %>
+          <% elsif admin_signed_in? %><!--アドミン側はいいねボタンは押せない-->
             <div class="favo">
               <%= render '/admin/favorites/favorite', post: post %>
             </div>
-          <% else %>
+          <% else %><!--非ログインはいいねボタンは押せない-->
             <div class="favo">
               <%= render '/admin/favorites/favorite', post: post %>
             </div>
           <% end %>
         </div>
       </div>
-
     </div>
   <% end %>
 </div>
 
+<!--新規投稿ボタン、トップへ戻るボタン-->
 <div class="bottom_btn">
-  <% if current_customer %>
+  <% if current_customer %><!--ログイン時は新規投稿ボタンが現れる-->
     <%= render '/public/posts/post_btn' %>
   <% end %>
   <a class="top-btn top_btn_bottom"><img src="/assets/top_btn.png" alt: "トップへ戻る" class="top_btn"></a>

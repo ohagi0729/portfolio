@@ -285,7 +285,7 @@ cursor: pointer;
 .mv_bg {
   width: 100%;
   height: 100vh;
-  background-image: url("nekolog_top.jpg");
+  background-image: image-url("nekolog_top.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -781,7 +781,7 @@ cursor: pointer;
 /*管理者側会員一覧部分*/
 .customer_table {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
 }
 
 .customer_table th ,.customer_table td {

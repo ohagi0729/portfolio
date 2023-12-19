@@ -2,13 +2,16 @@
   <% customers.each do |customer| %>
   <li class="customers_wrap">
     <div class="icon_neme_day">
+      <!--会員アイコン-->
       <%= link_to public_customer_path(customer), class: 'profile_img_s' do %>
         <%= image_tag customer.get_profile_image %>
       <% end %>
       <div>
+        <!--アイコン横のユーザーネーム-->
         <div class="comment_profile_flex">
           <p class="customer_name"><%= customer.name %></p>
         </div>
+        <!--紹介文とフォローボタン-->
         <div class="comment_profile_flex">
           <p class="customers_text"><%= customer.introduction %></p>
           <div id="follow-btn_<%= customer.id %>">
@@ -21,8 +24,9 @@
   <% end %>
 </ul>
 
+<!--新規投稿ボタン、トップへ戻るボタン-->
 <div class="bottom_btn">
-  <% if current_customer %>
+  <% if current_customer %><!--ログイン時は新規投稿ボタンが現れる-->
     <%= render '/public/posts/post_btn' %>
   <% end %>
   <a class="top-btn top_btn_bottom"><img src="/assets/top_btn.png" alt: "トップへ戻る" class="top_btn"></a>

@@ -16,7 +16,7 @@
     </td>
     <td class="table_email"><%= customer.email %></td>
     <td class="table_status">
-      <% if customer.is_active? %>
+      <% if customer.is_active? %><!--会員が有効か、退会か-->
         <span class="btn_y_ss">有効</span>
       <% else %>
         <span class="btn_g_ss">退会</span>
@@ -26,8 +26,9 @@
   <% end %>
 </table>
 
+<!--新規投稿ボタン、トップへ戻るボタン-->
 <div class="bottom_btn">
-  <% if current_customer %>
+  <% if current_customer %><!--ログイン時は新規投稿ボタンが現れる-->
     <%= render '/public/posts/post_btn' %>
   <% end %>
   <a class="top-btn top_btn_bottom"><img src="/assets/top_btn.png" alt: "トップへ戻る" class="top_btn"></a>

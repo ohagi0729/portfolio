@@ -1,60 +1,73 @@
 <div class="post_show">
+  <!--投稿画像-->
   <%= image_tag @post.get_image, class: 'post_show_img' %>
   <div class="post_text">
+
+    <!--会員アイコン-->
     <div class="icon_neme_day">
-      <%= link_to public_customer_path(@post.customer), class: 'profile_img_s' do %>
-        <%= image_tag @post.customer.get_profile_image %>
+      <% if admin_signed_in? %><!--アドミン側のshowヘ-->
+        <%= link_to admin_customer_path(@post.customer), class: 'profile_img_s' do %>
+          <%= image_tag @post.customer.get_profile_image %>
+        <% end %>
+      <% else %><!--パブリック側のshowヘ-->
+        <%= link_to public_customer_path(@post.customer), class: 'profile_img_s' do %>
+          <%= image_tag @post.customer.get_profile_image %>
+        <% end %>
       <% end %>
+      <!--アイコン横のユーザーネーム、日付-->
       <div class="profile_flex">
         <p class="customer_name"><%= @post.customer.name %></p>
         <p class="post_day"><%= @post.created_at.strftime('%Y年%m月%d日') %></p>
       </div>
     </div>
 
+    <!--投稿分-->
     <p class="post_caption"><%= @post.caption %></p>
 
+    <!--いいね、コメント、削除ボタン-->
     <div class="show_comment_favo">
-      <% if @post.customer == current_customer %>
+      <% if @post.customer == current_customer %><!--ログイン時には削除ボタンが現れる-->
         <%= link_to public_post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
           <img src="/assets/delete.png" alt: "削除" class="delete_g">
         <% end %>
-      <% elsif admin_signed_in? %>
+      <% elsif admin_signed_in? %><!--アドミン時には削除ボタンが現れる-->
         <%= link_to public_post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
           <img src="/assets/delete.png" alt: "削除" class="delete_g">
         <% end %>
       <% end %>
-
       <div id="comment_counter" class="favo">
         <%= render "/public/post_comments/counter", post_comments: @post_comments %>
       </div>
-
-      <% if current_customer %>
+      <% if current_customer %><!--ログイン時はいいねボタンを押せる-->
         <div id="favorite-btn_<%= @post.id %>" class="favo">
           <%= render '/public/favorites/favorite', post: @post %>
         </div>
-      <% elsif admin_signed_in? %>
+      <% elsif admin_signed_in? %><!--アドミン時はいいねボタンを押せない-->
         <div class="favo">
           <%= render '/admin/favorites/favorite', post: @post %>
         </div>
-      <% else %>
+      <% else %><!--非ログイン時はいいねボタンを押せない-->
         <div class="favo">
           <%= render '/admin/favorites/favorite', post: @post %>
         </div>
       <% end %>
     </div>
 
+    <!--コメントフォーム-->
     <% if current_customer %>
       <%= render "/public/post_comments/form", post: @post, post_comment: @post_comment %>
     <% end %>
 
+    <!--コメント一覧-->
     <div id="comment_index">
       <%= render "/public/post_comments/index", post_comments: @post_comments %>
     </div>
   </div>
 </div>
 
+<!--新規投稿ボタン、トップへ戻るボタン-->
 <div class="bottom_btn">
-  <% if current_customer %>
+  <% if current_customer %><!--ログイン時は新規投稿ボタンが現れる-->
     <%= render '/public/posts/post_btn' %>
   <% end %>
   <a class="top-btn top_btn_bottom"><img src="/assets/top_btn.png" alt: "トップへ戻る" class="top_btn"></a>

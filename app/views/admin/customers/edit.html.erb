@@ -1,5 +1,6 @@
 <h3 class="page_title">プロフィールを編集する（管理）</h3>
 
+<!--フラッシュメッセージ-->
 <div class="message-container">
   <% if flash[:danger].present? %>
     <div class="message">
@@ -13,6 +14,7 @@
   <% end %>
 </div>
 
+<!--編集フォーム-->
 <div class="prf_form_wrap">
   <%= form_with model: @customer, url: admin_customer_path(@customer), local: true, method: :patch do |f| %>
 
@@ -45,6 +47,7 @@
     </div>
   </div>
 
+<!--更新、キャンセルボタン-->
   <div class="prf_form_flex_btn">
     <%= link_to  'キャンセル',admin_customer_path(@customer), class: 'btn_g' %>
     <%= f.submit '更新する', class: 'btn_y' %>

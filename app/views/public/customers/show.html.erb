@@ -1,25 +1,28 @@
 <div class="profile_bg">
 
-<div class="message-container">
-  <% if flash[:danger].present? %>
-    <div class="message">
-      <%= flash[:danger] %>
-    </div>
-  <% end %>
-  <% if flash[:notice].present? %>
-    <div class="message">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
-</div>
+<!--フラッシュメッセージ-->
+  <div class="message-container">
+    <% if flash[:danger].present? %>
+      <div class="message">
+        <%= flash[:danger] %>
+      </div>
+    <% end %>
+    <% if flash[:notice].present? %>
+      <div class="message">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+  </div>
 
   <div class="profile">
     <div class="profile_btn">
       <div class="icon_neme_customer">
+        <!--会員アイコン-->
         <div class="profile_name_img">
           <%= image_tag @customer.get_profile_image, class: "profile_img_b" %>
         </div>
 
+        <!--アイコン横のユーザーネーム、カウンター類-->
         <div>
           <p class="customer_name_b"><%= @customer.name %></p>
           <div class="counter_flex">
@@ -42,30 +45,34 @@
         </div>
       </div>
 
+      <!--フォローボタンか、編集ボタン-->
       <div class="folow_edit">
-        <% if current_customer != @customer %>
+        <% if current_customer != @customer %><!--ログイン中のユーザーが自分自身のページを表示している場合フォローボタンは表示されない-->
           <div id="follow-btn_<%= @customer.id %>">
             <%= render "/public/relationships/follow_btn", customer: @customer %>
           </div>
         <% else %>
-          <% unless @customer.guest_customer? %>
+          <% unless @customer.guest_customer? %><!--ゲストユーザーの場合、編集ボタンは表示されません。-->
             <%= link_to "編集", edit_public_customer_path(current_customer), class: "btn_y_s" %>
           <% end %>
         <% end %>
       </div>
     </div>
+
+    <!--自己紹介文-->
     <p class="customer_show_text"><%= @customer.introduction %></p>
   </div>
 </div>
 
-<% if @posts.any? %>
+<% if @posts.any? %><!--会員に投稿があれば表示-->
   <%= render partial: 'public/posts/list', locals: { posts: @posts } %>
-<% else %>
+<% else %><!--会員に投稿が無い場合に表示-->
   <p>まだ投稿がありません。</p>
 <% end %>
 
+<!--新規投稿ボタン、トップへ戻るボタン-->
 <div class="bottom_btn">
-  <% if current_customer %>
+  <% if current_customer %><!--ログイン時は新規投稿ボタンが現れる-->
     <%= render '/public/posts/post_btn' %>
   <% end %>
   <a class="top-btn top_btn_bottom"><img src="/assets/top_btn.png" alt: "トップへ戻る" class="top_btn"></a>

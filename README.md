@@ -21,7 +21,8 @@
 ・猫の写真を見て癒されたい時
 ​
 ## 設計書
-後ほど提出予定
+- 遷移図、ER図：https://app.diagrams.net/#G1TKTJjbKQfva-nR87xxsK82IXDpbspIWI
+- アプリケーション詳細設計書：https://docs.google.com/spreadsheets/d/116_FitFi6jftHN5WHxrCxt7H0hqyBbPDhWkF44xQzHE/edit#gid=549108681
 ​
 ## 開発環境
 - OS：Linux(CentOS)
@@ -31,5 +32,5 @@
 - IDE：Cloud9
 ​
 ## 使用素材
-- ぱくたそ : https://www.pakutaso.com/
-- icooon-mono : https://icooon-mono.com/
+- ぱくたそ：https://www.pakutaso.com/
+- icooon-mono：https://icooon-mono.com/

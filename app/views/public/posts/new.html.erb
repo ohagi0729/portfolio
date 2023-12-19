@@ -1,5 +1,6 @@
 <h3 class="page_title">画像を投稿する</h3>
 
+<!--フラッシュメッセージ-->
 <div class="message-container">
   <% if flash[:danger].present? %>
     <div class="message">
@@ -13,6 +14,7 @@
   <% end %>
 </div>
 
+<!--投稿フォーム-->
 <div class="post_form_wrap">
   <%= form_for [:public, @post], local: true do |f| %>
   <div class="post_form_flex">
@@ -23,6 +25,8 @@
     <p>投稿文</p>
     <%= f.text_area :caption, rows:"3", placeholder:"ここに投稿文を記載する", class: "post_form_control_cap"  %>
   </div>
+  
+  <!--投稿、キャンセルボタン-->
   <div class="post_form_flex_btn">
     <%= link_to "キャンセル", public_posts_path, class: "btn_g" %>
     <%= f.submit '投稿する' , class: "btn_y" %>
