@@ -29,7 +29,7 @@
 
         <!--コメント、いいねカウンター-->
         <div class="comment_favo">
-          <img src="/assets/comment.png" alt: "コメント" class="comment_g">
+          <%= image_tag "comment.png",alt: "コメント", class: 'comment_g' %>
           <%= link_to "#{post.post_comments_by_active_customer.count}", public_post_path(post.id), class: 'comment_count_h' %>
           <% if current_customer %>
             <div id="favorite-btn_<%= post.id %>" class="favo">
@@ -55,5 +55,5 @@
   <% if current_customer %><!--ログイン時は新規投稿ボタンが現れる-->
     <%= render '/public/posts/post_btn' %>
   <% end %>
-  <a class="top-btn top_btn_bottom"><img src="/assets/top_btn.png" alt: "トップへ戻る" class="top_btn"></a>
+  <a class="top-btn top_btn_bottom"><%= image_tag "top_btn.png",alt: "トップへ戻る", class: 'top_btn' %></a>
 </div>

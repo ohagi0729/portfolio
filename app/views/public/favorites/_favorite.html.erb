@@ -1,13 +1,13 @@
 <% if post.favorited_by?(current_customer) %><!--いいねボタンが押される-->
   <%= link_to public_post_favorites_path(post), method: :delete, remote: true do %>
-    <img src="/assets/favo_y.png" alt: "いいね" class="favo_y">
+    <%= image_tag "favo_y.png",alt: "いいねon", class: 'favo_y' %>
     <span class="favo_count">
       <%= post.favorites_by_active_customer.count %>
     </span>
   <% end %>
 <% else %><!--いいねボタンが取り消される-->
   <%= link_to public_post_favorites_path(post), method: :post, remote: true do %>
-    <img src="/assets/favo_g.png" alt: "いいね" class="favo_g">
+    <%= image_tag "favo_g.png",alt: "いいねoff", class: 'favo_g' %>
     <span class="favo_count">
       <%= post.favorites_by_active_customer.count %>
     </span>

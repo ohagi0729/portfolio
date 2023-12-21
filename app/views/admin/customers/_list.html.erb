@@ -31,5 +31,5 @@
   <% if current_customer %><!--ログイン時は新規投稿ボタンが現れる-->
     <%= render '/public/posts/post_btn' %>
   <% end %>
-  <a class="top-btn top_btn_bottom"><img src="/assets/top_btn.png" alt: "トップへ戻る" class="top_btn"></a>
+  <a class="top-btn top_btn_bottom"><%= image_tag "top_btn.png",alt: "トップへ戻る", class: 'top_btn' %></a>
 </div>

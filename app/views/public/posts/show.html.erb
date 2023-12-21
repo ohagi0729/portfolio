@@ -28,11 +28,11 @@
     <div class="show_comment_favo">
       <% if @post.customer == current_customer %><!--ログイン時には削除ボタンが現れる-->
         <%= link_to public_post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
-          <img src="/assets/delete.png" alt: "削除" class="delete_g">
+          <%= image_tag "delete.png",alt: "削除", class: 'delete_g' %>
         <% end %>
       <% elsif admin_signed_in? %><!--アドミン時には削除ボタンが現れる-->
         <%= link_to public_post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } do %>
-          <img src="/assets/delete.png" alt: "削除" class="delete_g">
+          <%= image_tag "delete.png",alt: "削除", class: 'delete_g' %>
         <% end %>
       <% end %>
       <div id="comment_counter" class="favo">
@@ -70,5 +70,5 @@
   <% if current_customer %><!--ログイン時は新規投稿ボタンが現れる-->
     <%= render '/public/posts/post_btn' %>
   <% end %>
-  <a class="top-btn top_btn_bottom"><img src="/assets/top_btn.png" alt: "トップへ戻る" class="top_btn"></a>
+  <a class="top-btn top_btn_bottom"><%= image_tag "top_btn.png",alt: "トップへ戻る", class: 'top_btn' %></a>
 </div>
