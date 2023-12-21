@@ -5,4 +5,10 @@ document.addEventListener("turbolinks:load", function(){
     }, 200);
     event.preventDefault();
   });
+
+  $('.menu-trigger').on('click', function(event) {
+    $(this).toggleClass('active');
+    $('.sp-menu').fadeToggle();
+    event.preventDefault();
+  });
 });

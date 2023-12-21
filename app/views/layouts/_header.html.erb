@@ -6,10 +6,17 @@
   <ul>
     <% if customer_signed_in? %>
       <!--顧客ログイン時 -->
-      <li><%= render "/public/searches/serach" %></li>
-      <li><%= link_to "投稿一覧", public_posts_path %></li>
-      <li><%= link_to "会員一覧", public_customers_path %></li>
-      <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'header_btn' %></li>
+      <li class="pc_nav"><%= render "/public/searches/serach" %></li>
+      <li class="pc_nav"><%= link_to "投稿一覧", public_posts_path %></li>
+      <li class="pc_nav"><%= link_to "会員一覧", public_customers_path %></li>
+      <li class="pc_nav"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'header_btn' %></li>
+      <li class="hm_btn sp_nav">
+        <a class="menu-trigger" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </li>
       <li>
         <%= link_to public_customer_path(current_customer), class: 'profile_img_s' do %>
           <%= image_tag current_customer.get_profile_image %>
@@ -17,19 +24,59 @@
       </li>
     <% elsif admin_signed_in? %>
       <!-- 管理者ログイン時 -->
-      <li><%= render "/admin/searches/serach" %></li>
+      <li class="pc_nav"><%= render "/admin/searches/serach" %></li>
+      <li class="pc_nav"><%= link_to "投稿一覧", public_posts_path %></li>
+      <li class="pc_nav"><%= link_to "会員一覧", admin_customers_path %></li>
+      <li class="pc_nav"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, url: admin_session_path, class: 'header_btn' %></li>
+      <li class="hm_btn sp_nav">
+        <a class="menu-trigger" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </li>
+    <% else %>
+      <!-- ログアウト時 -->
+      <li class="pc_nav"><%= render "/public/searches/serach" %></li>
+      <li class="pc_nav"><%= link_to "投稿一覧", public_posts_path %></li>
+      <li class="pc_nav"><%= link_to "会員一覧", public_customers_path %></li>
+      <li class="pc_nav"><%= link_to "新規登録", new_customer_registration_path, class: 'header_btn' %></li>
+      <li class="pc_nav"><%= link_to "ログイン", new_customer_session_path, class: 'header_btn' %></li>
+      <li class="hm_btn sp_nav">
+        <a class="menu-trigger" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</nav>
+
+<nav class="sp-menu">
+  <ul>
+    <% if customer_signed_in? %>
+      <!--顧客ログイン時 -->
+      <li><%= link_to "投稿一覧", public_posts_path %></li>
+      <li><%= link_to "会員一覧", public_customers_path %></li>
+      <li><%= render "public/searches/serach" %></li>
+      <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'header_btn' %></li>
+    <% elsif admin_signed_in? %>
+      <!-- 管理者ログイン時 -->
       <li><%= link_to "投稿一覧", public_posts_path %></li>
       <li><%= link_to "会員一覧", admin_customers_path %></li>
+      <li><%= render "public/searches/serach" %></li>
       <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, url: admin_session_path, class: 'header_btn' %></li>
     <% else %>
       <!-- ログアウト時 -->
-      <li><%= render "/public/searches/serach" %></li>
       <li><%= link_to "投稿一覧", public_posts_path %></li>
       <li><%= link_to "会員一覧", public_customers_path %></li>
       <li><%= link_to "新規登録", new_customer_registration_path, class: 'header_btn' %></li>
+      <li><%= render "/public/searches/serach" %></li>
       <li><%= link_to "ログイン", new_customer_session_path, class: 'header_btn' %></li>
     <% end %>
   </ul>
 </nav>
+
 
 </header>

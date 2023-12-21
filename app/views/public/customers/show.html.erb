@@ -26,20 +26,20 @@
         <div>
           <p class="customer_name_b"><%= @customer.name %></p>
           <div class="counter_flex">
-            <div id="followings-counter_<%= @customer.id %>">
-              <%= link_to public_customer_followings_path(@customer) do %>
+            <div id="followings-counter_<%= @customer.id %>"><!--フォロー中カウンター-->
+              <%#= link_to public_customer_followings_path(@customer) do %>
                 <%= render "/public/relationships/followings_counter", customer: @customer %>
-              <% end %>
+              <%# end %>
             </div>
-            <div id="followers-counter_<%= @customer.id %>">
-              <%= link_to public_customer_followers_path(@customer) do %>
+            <div id="followers-counter_<%= @customer.id %>"><!--フォロワーカウンター-->
+              <%#= link_to public_customer_followers_path(@customer) do %>
                 <%= render "/public/relationships/followers_counter", customer: @customer %>
-              <% end %>
+              <%# end %>
             </div>
-            <div id="favorites-counter_<%= @customer.id %>">
-              <%= link_to favorites_public_customer_path(@customer) do %>
+            <div id="favorites-counter_<%= @customer.id %>"><!--いいねカウンター-->
+              <%#= link_to favorites_public_customer_path(@customer) do %>
                 <%= render "/public/favorites/favorite_counter", customer: @customer %>
-              <% end %>
+              <%# end %>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
 <% if @posts.any? %><!--会員に投稿があれば表示-->
   <%= render partial: 'public/posts/list', locals: { posts: @posts } %>
 <% else %><!--会員に投稿が無い場合に表示-->
-  <p>まだ投稿がありません。</p>
+  <p class="no_post">まだ投稿がありません。</p>
 <% end %>
 
 <!--新規投稿ボタン、トップへ戻るボタン-->
