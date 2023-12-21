@@ -202,7 +202,8 @@ cursor: pointer;
 
 .search_form {  /*検索フォーム外枠*/
   height: 40px;
-  max-width: 462px;
+  width: 462px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   border: 1px solid #e6e6e6;
@@ -231,6 +232,7 @@ cursor: pointer;
 }
 
 .search_form input[type="text"] {  /*検索フォーム入力部分*/
+  width: 216px;
   background-color: #fff;
   border: 0px;
   padding: 0 0 0 10px;
@@ -848,7 +850,11 @@ cursor: pointer;
 }
 
 
-@media screen and (max-width: 1144px) {
+@media screen and (max-width: 1147px) {
+
+  .page_title {
+    margin: 90px 0 38px 0;
+  }
 
   #header {
     height: 50px;
@@ -919,38 +925,66 @@ cursor: pointer;
     height: 35px;
   }
 
-  .profile_img_s a {  /*アイコン部分*/
-    display: block;
-  }
-
   /* spメニュー*/
   .sp-menu {
     width: 100%;
-    height: 180px;
+    height: 360px;
     position: fixed;
     top: 50px;
     left: 0;
     background: #fff;
     display: none;
     z-index: auto;
-  }
-
-  .sp-menu {
     text-align: center;
     font-weight: bold;
+    align-items: center;
   }
 
-  .sp-menu ul {
-    display: block;
+  .search_form {  /*検索フォーム外枠*/
+    margin-top: 15px;
   }
-
-
 
   .sp-menu li a {
     line-height: 40px;
   }
 
-  .search_form input[type="text"] {  /*検索フォーム入力部分*/
-    max-width: 90%;
+  .sp-menu li {
+    padding: 20px 0;
   }
+
+  .sp_menu_border {
+    border-top: 1px solid #e6e6e6;
+  }
+}
+
+
+@media screen and (max-width: 1039px) {
+
+  .post_wrap {
+    max-width: 680px;
+  }
+}
+
+@media screen and (max-width: 699px) {
+
+  .post_wrap {
+    max-width: 340px;
+  }
+
+  .search_form {  /*検索フォーム外枠*/
+  width: 365px;
+  }
+
+  .custom_select {  /*検索フォームセレクト部分*/
+    padding: 0 4px;
+  }
+
+  .search_btn {
+    margin-right: 4px;
+  }
+
+  .search_form input[type="text"] {  /*検索フォーム入力部分*/
+    width: 160px;
+  }
+
 }
