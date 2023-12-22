@@ -1,23 +1,21 @@
 <ul class="customers_list">
   <% customers.each do |customer| %>
   <li class="customers_wrap">
-    <div class="icon_neme_day">
-      <!--会員アイコン-->
-      <%= link_to public_customer_path(customer), class: 'profile_img_s' do %>
-        <%= image_tag customer.get_profile_image %>
-      <% end %>
       <div class="icon_folow_int">
-        <!--アイコン横のユーザーネーム-->
-        <div class="comment_profile_flex">
+        <div class="icon_name">
+          <!--会員アイコン-->
+          <%= link_to public_customer_path(customer), class: 'profile_img_s' do %>
+            <%= image_tag customer.get_profile_image %>
+          <% end %>
+          <!--ユーザーネーム-->
           <p class="customer_name"><%= customer.name %></p>
-          <div id="follow-btn_<%= customer.id %>">
-            <%= render "/public/relationships/follow_btn", customer: customer %>
-          </div>
         </div>
-        <!--紹介文-->
-        <p class="customers_text"><%= customer.introduction %></p>
+        <div id="follow-btn_<%= customer.id %>">
+          <%= render "/public/relationships/follow_btn", customer: customer %>
+        </div>
       </div>
-    </div>
+      <!--紹介文-->
+      <p class="customers_text"><%= customer.introduction %></p>
   </li>
   <% end %>
 </ul>

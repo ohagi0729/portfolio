@@ -17,36 +17,36 @@
   <div class="profile">
     <div class="profile_btn">
       <div class="icon_neme_customer">
-        <!--会員アイコン-->
-        <div class="profile_name_img">
-          <%= image_tag @customer.get_profile_image, class: "profile_img_b" %>
+        <div class="icon_folow_edit">
+          <!--会員アイコン-->
+          <div class="profile_name_img">
+            <%= image_tag @customer.get_profile_image, class: "profile_img_b" %>
+          </div>
+          <div class="folow_edit_sp">
+            <%= link_to "編集", edit_admin_customer_path(@customer), class: "btn_y_s" %>
+          </div>
         </div>
+
 
         <!--アイコン横のユーザーネーム、カウンター類-->
         <div>
           <p class="customer_name_b"><%= @customer.name %></p>
           <div class="counter_flex">
             <div id="followings-counter_<%= @customer.id %>">
-              <%= link_to admin_customer_followings_path(@customer) do %>
-                <%= render "/admin/relationships/followings_counter", customer: @customer %>
-              <% end %>
+              <%= render "/admin/relationships/followings_counter", customer: @customer %>
             </div>
             <div id="followers-counter_<%= @customer.id %>">
-              <%= link_to admin_customer_followers_path(@customer) do %>
-                <%= render "/admin/relationships/followers_counter", customer: @customer %>
-              <% end %>
+              <%= render "/admin/relationships/followers_counter", customer: @customer %>
             </div>
             <div id="favorites-counter_<%= @customer.id %>">
-              <%= link_to favorites_public_customer_path(@customer) do %>
-                <%= render "/public/favorites/favorite_counter", customer: @customer %>
-              <% end %>
+              <%= render "/public/favorites/favorite_counter", customer: @customer %>
             </div>
           </div>
         </div>
       </div>
 
       <!--編集ボタン-->
-      <div clss="folow_edit">
+      <div class="folow_edit">
         <%= link_to "編集", edit_admin_customer_path(@customer), class: "btn_y_s" %>
       </div>
     </div>
