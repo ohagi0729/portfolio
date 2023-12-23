@@ -278,8 +278,11 @@ cursor: pointer;
   display: none;
 }
 
-/*フラッシュメッセージ部分*/
+.contents_padding {
+  padding: 0 20px;
+}
 
+/*フラッシュメッセージ部分*/
 .message-container {
   text-align: center;
 }
@@ -307,8 +310,7 @@ cursor: pointer;
 }
 
 .top_text_wrap {
-  max-width: 800px;
-  padding: 40px;
+  padding: 40px 100px;
   text-align: center;
   border-radius: 6px;
   background-color: #fff;
@@ -324,11 +326,11 @@ cursor: pointer;
 .top_logo {
   display: block;
   max-width: 543px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px;
 }
 
 .top_logo img {
-width: 100%;
+  width: 100%;
 }
 
 .top_text {
@@ -345,6 +347,33 @@ width: 100%;
   display: flex;
   align-items: center;
   justify-content:center;
+}
+
+.btn_g_top {
+  width: 168px;
+  height: 40px;
+  margin-right: 20px;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  background-color: #e6e6e6;
+  border: 0px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn_y_top {
+  width: 168px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  background-color: #ffea00;
+  border: 0px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .guestlogin {
@@ -632,6 +661,7 @@ width: 100%;
   height: 100px;
   padding: 8px 10px;
   line-height: 25px;
+  border: 1px solid #e6e6e6;
 }
 
 .post_form_flex_btn {
@@ -645,7 +675,7 @@ width: 100%;
 /*会員一覧部分*/
 .customers_list {
   margin: 0 auto 40px;
-  padding: 0;
+  padding: 0 20px;
   max-width: 600px;
 }
 
@@ -678,6 +708,11 @@ width: 100%;
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 20px;
+}
+
+.no_customer {
+  font-weight: bold;
+  text-align: center;
 }
 
 /*会員詳細部分*/
@@ -792,16 +827,18 @@ width: 100%;
   margin-bottom: 40px;
   padding: 8px 10px;
   line-height: 25px;
+  border: 1px solid #e6e6e6;
 }
 
 .prf_form_flex_btn {
   display: flex;
   align-items: center;
   justify-content:center;
-  margin-bottom: 30px;
+  margin-top: 40px;
 }
 
 .prf_form_withdrawal {
+  margin-top: 30px;
   font-weight: bold;
   text-align: center;
 }
@@ -833,6 +870,10 @@ width: 100%;
 }
 
 /*管理者側会員一覧部分*/
+.customer_table_sp {
+  display: none;
+}
+
 .customer_table {
   max-width: 800px;
   margin: 0 auto 40px auto;
@@ -886,7 +927,7 @@ width: 100%;
 }
 
 
-@media screen and (max-width: 1147px) {
+@media screen and (max-width: 1245px) {
 
   .page_title {
     margin: 90px 0 38px 0;
@@ -996,6 +1037,18 @@ width: 100%;
   .sp_menu_border {
     border-top: 1px solid #e6e6e6;
   }
+
+  .login_form_flex_btn {
+    margin-bottom: 0px;
+    display: flex;
+    align-items: flex-start;;
+    justify-content:center
+  }
+
+  .login_btn {
+    margin-left: 20px;
+  }
+
 }
 
 
@@ -1030,7 +1083,12 @@ width: 100%;
   }
 
   .message {
-    margin: 10px 0 0 0;
+    margin-bottom: 20px;
+  }
+
+  .page_title {
+    font-size: 24px;
+    margin-bottom: 26px;
   }
 
   .post_wrap {
@@ -1054,34 +1112,41 @@ width: 100%;
   }
 
   /*トップページ部分*/
-  .top_copy  {
-    margin-bottom: 16px;
-    font-size: 20px;
-    font-weight: bold;
-  }
+.top_text_wrap {
+  padding: 40px;
+}
 
-  .top_logo {
-    margin-bottom: 40px;
-  }
+.top_copy  {
+  font-size: 15px;
+}
 
-  .top_text  {
-    margin-bottom: 40px;
-    font-weight: bold;
-    line-height: 34px;
-  }
+.top_logo {
+  margin: 0 auto 20px;
+}
 
-  .guestlogin-wrap {
-    margin-top: 30px;
-  }
+.top_text {
+  font-size: 14px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
 
-  .guestlogin {
-    margin-top: 30px;
-    font-weight: bold;
-  }
+.guestlogin-wrap {
+  margin-top: 20px;
+}
 
-  .page_title {
-    font-size: 24px;
-  }
+.btn_g_top {
+  width: 100px;
+}
+
+.btn_y_top {
+  width: 100px;
+}
+
+.guestlogin {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
 
   /*会員詳細部分*/
   .profile_bg {
@@ -1245,7 +1310,7 @@ width: 100%;
   .prf_form_flex_int {
     display: block;
     max-width: 300px;
-    margin: 0 auto 20px;
+    margin: 0 auto 40px;
   }
 
   .prf_form_flex_int p {
@@ -1258,12 +1323,10 @@ width: 100%;
     margin: 0 auto 20px;
   }
 
-
   .prf_form_flex_btn {
     display: flex;
     align-items: center;
     justify-content:center;
-    margin-bottom: 40px;
   }
 
 
@@ -1274,6 +1337,51 @@ width: 100%;
   }
 
   /*管理者側会員一覧部分*/
+  .customer_table {
+    display: none;
+    margin: 0 auto;
+  }
 
+  .customer_table_sp {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 40px auto;
+  }
+
+  .customer_table_sp th ,.customer_table_sp td {
+    padding: 10px;
+    border-bottom: 1px solid #e6e6e6;
+    font-weight: bold;
+  }
+
+  .customer_table_sp th {
+    background-color: #e6e6e6;
+  }
+
+  .table_id_sp {
+    width: 15%;
+    text-align: center;
+  }
+
+  .table_name_sp {
+    display: block;
+    text-align: left;
+  }
+
+  .table_name_icon_sp {
+    display: flex;
+    align-items: center;
+  }
+
+  .table_name_margin_sp {
+    margin-left: 10px;
+  }
+
+  .table_status_sp {
+    width: 20%;
+    text-align: center;
+  }
 
 }

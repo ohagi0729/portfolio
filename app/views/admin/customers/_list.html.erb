@@ -26,6 +26,36 @@
   <% end %>
 </table>
 
+
+<table class="customer_table_sp">
+  <tr>
+    <th>会員<br>ID</th>
+    <th>ユーザーネーム<br>メールアドレス</th>
+    <th>ステータス</th>
+  </tr>
+  <% customers.each do |customer| %>
+  <tr>
+    <td><%= customer.id %></th>
+    <td class="table_name_sp">
+      <div class="table_name_icon_sp">
+        <%= link_to admin_customer_path(customer), class: 'profile_img_s' do %>
+          <%= image_tag customer.get_profile_image %>
+        <% end %>
+        <span class="table_name_margin_sp"><%= customer.name %></span>
+      </div>
+      <%= customer.email %>
+    </td>
+    <td class="table_status_sp">
+      <% if customer.is_active? %><!--会員が有効か、退会か-->
+        <span class="btn_y_ss">有効</span>
+      <% else %>
+        <span class="btn_g_ss">退会</span>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
 <!--新規投稿ボタン、トップへ戻るボタン-->
 <div class="bottom_btn">
   <% if current_customer %><!--ログイン時は新規投稿ボタンが現れる-->

@@ -2,7 +2,7 @@
 <% if @customers.exists? %>
   <%= render "/public/customers/list", customers: @customers %>
 <% else %>
-  <p>ユーザーはいません</p>
+  <p class="no_customer">ユーザーはいません</p>
 <% end %>
 
 <!--新規投稿ボタン、トップへ戻るボタン-->

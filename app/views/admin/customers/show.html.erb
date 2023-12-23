@@ -59,7 +59,7 @@
 <% if @posts.any? %><!--会員に投稿があれば表示-->
   <%= render partial: 'public/posts/list', locals: { posts: @posts } %>
 <% else %><!--会員に投稿が無い場合に表示-->
-  <p>まだ投稿がありません。</p>
+  <p class="no_post">まだ投稿がありません。</p>
 <% end %>
 
 <!--新規投稿ボタン、トップへ戻るボタン-->

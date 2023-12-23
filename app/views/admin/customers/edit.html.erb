@@ -1,56 +1,57 @@
 <h3 class="page_title">プロフィールを編集する（管理）</h3>
-
-<!--フラッシュメッセージ-->
-<div class="message-container">
-  <% if flash[:danger].present? %>
-    <div class="message">
-      <%= flash[:danger] %>
-    </div>
-  <% end %>
-  <% if flash[:notice].present? %>
-    <div class="message">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
-</div>
-
-<!--編集フォーム-->
-<div class="prf_form_wrap">
-  <%= form_with model: @customer, url: admin_customer_path(@customer), local: true, method: :patch do |f| %>
-
-  <div class="prf_form_flex">
-    <p >プロフィール画像</p>
-    <div>
-      <%= f.file_field :profile_image, class: "prf_form_control_img", accept: 'image/*' %>
-    </div>
+<div class="contents_padding">
+  <!--フラッシュメッセージ-->
+  <div class="message-container">
+    <% if flash[:danger].present? %>
+      <div class="message">
+        <%= flash[:danger] %>
+      </div>
+    <% end %>
+    <% if flash[:notice].present? %>
+      <div class="message">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
   </div>
 
-  <div class="prf_form_flex">
-    <p >ユーザーネーム</p>
-    <div>
-      <%= f.text_field :name, autofocus: true, class: "prf_form_control" %>
-    </div>
-  </div>
+  <!--編集フォーム-->
+  <div class="prf_form_wrap">
+    <%= form_with model: @customer, url: admin_customer_path(@customer), local: true, method: :patch do |f| %>
 
-  <div class="prf_form_flex_int">
-    <p >自己紹介</p>
-    <div class="form-group">
-      <%= f.text_area :introduction, class: "prf_form_control_int" %>
+    <div class="prf_form_flex">
+      <p >プロフィール画像</p>
+      <div>
+        <%= f.file_field :profile_image, class: "prf_form_control_img", accept: 'image/*' %>
+      </div>
     </div>
-  </div>
 
-  <div class="prf_form_flex">
-    <p>会員ステータス</p>
-    <div>
-      <%= f.radio_button :is_active, true %><%= f.label :is_active, "有効　 " %>
-      <%= f.radio_button :is_active, false %><%= f.label :is_active, "退会" %>
+    <div class="prf_form_flex">
+      <p >ユーザーネーム</p>
+      <div>
+        <%= f.text_field :name, autofocus: true, class: "prf_form_control" %>
+      </div>
     </div>
-  </div>
 
-<!--更新、キャンセルボタン-->
-  <div class="prf_form_flex_btn">
-    <%= link_to  'キャンセル',admin_customer_path(@customer), class: 'btn_g' %>
-    <%= f.submit '更新する', class: 'btn_y' %>
+    <div class="prf_form_flex_int">
+      <p >自己紹介</p>
+      <div class="form-group">
+        <%= f.text_area :introduction, class: "prf_form_control_int" %>
+      </div>
+    </div>
+
+    <div class="prf_form_flex_int">
+      <p>会員ステータス</p>
+      <div>
+        <%= f.radio_button :is_active, true %><%= f.label :is_active, "有効　 " %>
+        <%= f.radio_button :is_active, false %><%= f.label :is_active, "退会" %>
+      </div>
+    </div>
+
+  <!--更新、キャンセルボタン-->
+    <div class="prf_form_flex_btn">
+      <%= link_to  'キャンセル',admin_customer_path(@customer), class: 'btn_g' %>
+      <%= f.submit '更新する', class: 'btn_y' %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>

@@ -2,5 +2,5 @@
 <% if @customers.exists? %>
   <%= render "/admin/customers/list", customers: @customers %>
 <% else %>
-  <p>ユーザーはいません</p>
+  <p class="no_customer">ユーザーはいません</p>
 <% end %>

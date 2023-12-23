@@ -72,8 +72,10 @@
       <li class="sp_menu_border"><%= link_to "投稿一覧", public_posts_path %></li>
       <li class="sp_menu_border"><%= link_to "会員一覧", public_customers_path %></li>
       <li class="sp_menu_border"><%= render "/public/searches/serach" %></li>
-      <li><%= link_to "新規登録", new_customer_registration_path, class: 'header_btn' %></li>
-      <li><%= link_to "ログイン", new_customer_session_path, class: 'header_btn' %></li>
+      <div class="login_form_flex_btn">
+        <li><%= link_to "新規登録", new_customer_registration_path, class: 'header_btn' %></li>
+        <li><%= link_to "ログイン", new_customer_session_path, class: 'header_btn login_btn' %></li>
+      </div>
     <% end %>
   </ul>
 </nav>

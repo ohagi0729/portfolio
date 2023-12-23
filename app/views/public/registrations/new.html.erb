@@ -1,54 +1,55 @@
 <h3 class="page_title">新規登録</h3>
-
-<!--フラッシュメッセージ-->
-<div class="message-container">
-  <% if flash[:danger].present? %>
-    <div class="message">
-      <%= flash[:danger] %>
-    </div>
-  <% end %>
-  <% if flash[:notice].present? %>
-    <div class="message">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
-</div>
-
-<!--新規登録フォーム-->
-<div class="sinup_form_wrap">
-  <%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', local: true do |f| %>
-    <div>
-    <%= render "devise/shared/error_messages", resource: resource %>
-    </div>
-  <div class="sinup_form_flex">
-    <p >ユーザーネーム</p>
-    <div>
-    <%= f.text_field :name, autofocus: true, class:"sinup_form_control" %>
-    </div>
-  </div>
-  <div class="sinup_form_flex">
-    <p>メールアドレス</p>
-    <div>
-    <%= f.email_field :email, autofocus: true, class:"sinup_form_control" %>
-    </div>
-  </div>
-  <div class="sinup_form_flex">
-    <p>パスワード</p>
-    <div>
-    <%= f.password_field :password, autocomplete: "off", class:"sinup_form_control" %>
-    </div>
-  </div>
-  <div class="sinup_form_flex_last">
-    <p>パスワード<br>(確認用)</p>
-    <div>
-    <%= f.password_field :password_confirmation, autocomplete: "off", class:"sinup_form_control" %>
-    </div>
+<div class="contents_padding">
+  <!--フラッシュメッセージ-->
+  <div class="message-container">
+    <% if flash[:danger].present? %>
+      <div class="message">
+        <%= flash[:danger] %>
+      </div>
+    <% end %>
+    <% if flash[:notice].present? %>
+      <div class="message">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
   </div>
 
-<!--ログイン、キャンセルボタン-->
-  <div class="sinup_form_flex_btn">
-    <%= link_to 'キャンセル', root_path, class:"btn_g" %>
-    <%= f.submit "新規登録する",class: "btn_y" %>
+  <!--新規登録フォーム-->
+  <div class="sinup_form_wrap">
+    <%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', local: true do |f| %>
+      <div>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
+    <div class="sinup_form_flex">
+      <p >ユーザーネーム</p>
+      <div>
+      <%= f.text_field :name, autofocus: true, class:"sinup_form_control" %>
+      </div>
+    </div>
+    <div class="sinup_form_flex">
+      <p>メールアドレス</p>
+      <div>
+      <%= f.email_field :email, autofocus: true, class:"sinup_form_control" %>
+      </div>
+    </div>
+    <div class="sinup_form_flex">
+      <p>パスワード</p>
+      <div>
+      <%= f.password_field :password, autocomplete: "off", class:"sinup_form_control" %>
+      </div>
+    </div>
+    <div class="sinup_form_flex_last">
+      <p>パスワード<br>(確認用)</p>
+      <div>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class:"sinup_form_control" %>
+      </div>
+    </div>
+
+  <!--ログイン、キャンセルボタン-->
+    <div class="sinup_form_flex_btn">
+      <%= link_to 'キャンセル', root_path, class:"btn_g" %>
+      <%= f.submit "新規登録する",class: "btn_y" %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
