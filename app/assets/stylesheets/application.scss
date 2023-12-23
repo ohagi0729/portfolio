@@ -254,8 +254,8 @@ cursor: pointer;
 }
 
 .profile_img_s img {  /*アイコン部分*/
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   object-fit: cover;
   object-position: center center;
   border-radius: 50%;
@@ -473,7 +473,7 @@ cursor: pointer;
 
 /*投稿詳細部分*/
 .post_show {
-  width: 600px;
+  max-width: 600px;
   margin: 120px auto 40px;
   border: 1px solid #e6e6e6;
   border-radius: 6px;
@@ -483,6 +483,10 @@ cursor: pointer;
 .post_show_img {
   width: 100%;
   border-radius: 6px 6px 0 0;
+}
+
+.post_customer_name {
+  font-weight: bold;
 }
 
 .show_comment_favo {
@@ -506,6 +510,16 @@ cursor: pointer;
 }
 
 .comment_btn {
+  margin-bottom: 20px;
+}
+
+.comment_icon_neme_day {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.comment_profile_flex {
+  display: flex;
   margin-bottom: 20px;
 }
 
@@ -724,20 +738,15 @@ cursor: pointer;
 }
 
 .profile {
-  width: 600px;
+  max-width: 600px;
   margin: 0 auto;
-}
-
-.profile_btn {
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .profile_img_b {
   width: 130px;
   height: 130px;
-  margin-right: 20px;
+  margin: 0 20px 14px 0;
   object-fit: cover;
   object-position: center center;
   border-radius: 50%;
@@ -745,16 +754,13 @@ cursor: pointer;
 
 .icon_neme_customer {
   display: flex;
+  justify-content: center;
 }
 
 .customer_name_b {
-  margin: 70px 0 10px 0;
+  margin-bottom: 14px;
   font-size: 26px;
   font-weight: bold;
-}
-
-.folow_edit_sp {
-  display: none;
 }
 
 .customer_show_counters {
@@ -769,10 +775,15 @@ cursor: pointer;
 
 .counter_flex {
   display: flex;
+  margin-bottom: 14px;
 }
 
 .counter_flex a {
   margin-right: 16px;
+}
+
+.folow_edit {
+  margin-bottom: 14px;
 }
 
 .customer_show_text {
@@ -821,6 +832,17 @@ cursor: pointer;
   font-weight: bold;
 }
 
+.prf_form_flex_sta {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.prf_form_flex_sta p {
+  width: 150px;
+  font-weight: bold;
+}
+
 .prf_form_control_int {
   width: 540px;
   height: 100px;
@@ -834,7 +856,6 @@ cursor: pointer;
   display: flex;
   align-items: center;
   justify-content:center;
-  margin-top: 40px;
 }
 
 .prf_form_withdrawal {
@@ -1112,87 +1133,58 @@ cursor: pointer;
   }
 
   /*トップページ部分*/
-.top_text_wrap {
-  padding: 40px;
-}
-
-.top_copy  {
-  font-size: 15px;
-}
-
-.top_logo {
-  margin: 0 auto 20px;
-}
-
-.top_text {
-  font-size: 14px;
-  line-height: 30px;
-  margin-bottom: 20px;
-}
-
-.guestlogin-wrap {
-  margin-top: 20px;
-}
-
-.btn_g_top {
-  width: 100px;
-}
-
-.btn_y_top {
-  width: 100px;
-}
-
-.guestlogin {
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-
-  /*会員詳細部分*/
-  .profile_bg {
-    padding: 60px 20px 30px;
+  .top_text_wrap {
+    padding: 40px;
+    margin-top: 40px;
   }
 
-  .profile {
-    width: 100%;
+  .top_copy  {
+    font-size: 15px;
   }
 
-  .profile_btn {
+  .top_logo {
+    margin: 0 auto 20px;
+  }
+
+  .top_text {
+    font-size: 14px;
+    line-height: 30px;
     margin-bottom: 20px;
-    display: block;
+  }
+
+  .guestlogin-wrap {
+    margin-top: 20px;
+  }
+
+  .btn_g_top {
+    width: 100px;
+  }
+
+  .btn_y_top {
+    width: 100px;
+  }
+
+  .guestlogin {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+
+    /*会員詳細部分*/
+  .profile_bg {
+    padding: 90px 20px 40px;
+  }
+
+  .profile_img_wrap {
+    text-align: center;
   }
 
   .profile_img_b {
-    width: 130px;
-    height: 130px;
-    margin-right: 20px;
-    object-fit: cover;
-    object-position: center center;
-    border-radius: 50%;
+    margin: 0 0 14px 0;
   }
 
   .icon_neme_customer {
     display: block;
-    align-items: center;
-  }
-
-  .customer_name_b {
-    margin: 0 0 20px 0;
-  }
-
-  .icon_folow_edit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-  }
-
-  .folow_edit_sp {
-    display: block;
-  }
-
-  .folow_edit {
-    display: none;
   }
 
 /*新規登録フォーム部分*/

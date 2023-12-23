@@ -15,18 +15,11 @@
 </div>
 
   <div class="profile">
-    <div class="profile_btn">
       <div class="icon_neme_customer">
-        <div class="icon_folow_edit">
-          <!--会員アイコン-->
-          <div class="profile_name_img">
-            <%= image_tag @customer.get_profile_image, class: "profile_img_b" %>
-          </div>
-          <div class="folow_edit_sp">
-            <%= link_to "編集", edit_admin_customer_path(@customer), class: "btn_y_s" %>
-          </div>
+        <!--会員アイコン-->
+        <div class="profile_img_wrap">
+          <%= image_tag @customer.get_profile_image, class: "profile_img_b" %>
         </div>
-
 
         <!--アイコン横のユーザーネーム、カウンター類-->
         <div>
@@ -42,18 +35,16 @@
               <%= render "/public/favorites/favorite_counter", customer: @customer %>
             </div>
           </div>
+          <!--編集ボタン-->
+          <div class="folow_edit">
+            <%= link_to "編集", edit_admin_customer_path(@customer), class: "btn_y_s" %>
+          </div>
+
+          <!--自己紹介文-->
+          <p class="customer_show_text"><%= @customer.introduction %></p>
         </div>
       </div>
-
-      <!--編集ボタン-->
-      <div class="folow_edit">
-        <%= link_to "編集", edit_admin_customer_path(@customer), class: "btn_y_s" %>
-      </div>
     </div>
-
-    <!--自己紹介文-->
-    <p class="customer_show_text"><%= @customer.introduction %></p>
-  </div>
 </div>
 
 <% if @posts.any? %><!--会員に投稿があれば表示-->

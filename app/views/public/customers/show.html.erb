@@ -15,25 +15,10 @@
   </div>
 
   <div class="profile">
-    <div class="profile_btn">
       <div class="icon_neme_customer">
-        <div class="icon_folow_edit">
-          <!--会員アイコン-->
-          <div class="profile_name_img">
-            <%= image_tag @customer.get_profile_image, class: "profile_img_b" %>
-          </div>
-          <!--フォローボタンか、編集ボタン-->
-          <div class="folow_edit_sp">
-            <% if current_customer != @customer %><!--ログイン中のユーザーが自分自身のページを表示している場合フォローボタンは表示されない-->
-              <div id="follow-btn_<%= @customer.id %>">
-                <%= render "/public/relationships/follow_btn", customer: @customer %>
-              </div>
-            <% else %>
-              <% unless @customer.guest_customer? %><!--ゲストユーザーの場合、編集ボタンは表示されません。-->
-                <%= link_to "編集", edit_public_customer_path(current_customer), class: "btn_y_s" %>
-              <% end %>
-            <% end %>
-          </div>
+        <!--会員アイコン-->
+        <div class="profile_img_wrap">
+          <%= image_tag @customer.get_profile_image, class: "profile_img_b" %>
         </div>
 
         <!--アイコン横のユーザーネーム、カウンター類-->
@@ -50,25 +35,22 @@
               <%= render "/public/favorites/favorite_counter", customer: @customer %>
             </div>
           </div>
+          <!--フォローボタンか、編集ボタン-->
+          <div class="folow_edit">
+            <% if current_customer != @customer %><!--ログイン中のユーザーが自分自身のページを表示している場合フォローボタンは表示されない-->
+              <div id="follow-btn_<%= @customer.id %>">
+                <%= render "/public/relationships/follow_btn", customer: @customer %>
+              </div>
+            <% else %>
+              <% unless @customer.guest_customer? %><!--ゲストユーザーの場合、編集ボタンは表示されません。-->
+                <%= link_to "編集", edit_public_customer_path(current_customer), class: "btn_y_s" %>
+              <% end %>
+            <% end %>
+          </div>
+          <!--自己紹介文-->
+          <p class="customer_show_text"><%= @customer.introduction %></p>
         </div>
       </div>
-
-      <!--フォローボタンか、編集ボタン-->
-      <div class="folow_edit">
-        <% if current_customer != @customer %><!--ログイン中のユーザーが自分自身のページを表示している場合フォローボタンは表示されない-->
-          <div id="follow-btn_<%= @customer.id %>">
-            <%= render "/public/relationships/follow_btn", customer: @customer %>
-          </div>
-        <% else %>
-          <% unless @customer.guest_customer? %><!--ゲストユーザーの場合、編集ボタンは表示されません。-->
-            <%= link_to "編集", edit_public_customer_path(current_customer), class: "btn_y_s" %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
-    <!--自己紹介文-->
-    <p class="customer_show_text"><%= @customer.introduction %></p>
   </div>
 </div>
 
