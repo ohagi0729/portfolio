@@ -24,7 +24,7 @@ class Admin::RelationshipsController < ApplicationController
 
   def active_customer
     if !Customer.find(params[:customer_id]).is_active
-      redirect_to public_customers_path
+      redirect_to admin_customers_path
     end
   end
 end
