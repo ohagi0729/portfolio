@@ -290,7 +290,7 @@ cursor: pointer;
 .message {
   display: inline-block;
   padding: 8px 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   border-radius: 20px;
   font-weight: bold;
   background-color: #ffea00;
@@ -975,10 +975,14 @@ cursor: pointer;
     display: block;
   }
 
+  .sp_menu_serach {
+    display: none;
+  }
+
   /*ハンバーガーアイコン*/
   .hm_btn {
     position: fixed;
-    right: 90px;
+    right: 85px;
     top: 11px;
     z-index: 10;
     display: block;
@@ -1029,6 +1033,10 @@ cursor: pointer;
   }
 
   /* spメニュー*/
+  .sp_serach {
+    display: none;
+  }
+
   .sp-menu {
     width: 100%;
     height: 360px;
@@ -1044,7 +1052,9 @@ cursor: pointer;
   }
 
   .search_form {  /*検索フォーム外枠*/
-    margin-top: 15px;
+    height: 35px;
+    position: fixed;
+    right: 110px;
   }
 
   .sp-menu li a {
@@ -1082,6 +1092,18 @@ cursor: pointer;
 
 
 @media screen and (max-width: 719px) {
+
+  .sp_menu_serach {
+    display: block;
+  }
+
+  .search_form {  /*検索フォーム外枠*/
+    position: initial;
+  }
+
+  .pc_serach {
+    display: none;
+  }
 
   .post_btn {
     width: 40px;
