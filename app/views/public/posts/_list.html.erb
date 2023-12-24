@@ -25,7 +25,7 @@
         </div>
 
         <!--投稿分-->
-        <p class="post_caption"><%= post.caption %></p>
+        <p class="post_caption"><%= truncate(post.caption, length: 50) %></p>
 
         <!--コメント、いいねカウンター-->
         <div class="comment_favo">

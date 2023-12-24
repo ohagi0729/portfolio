@@ -15,7 +15,7 @@
         </div>
       </div>
       <!--紹介文-->
-      <p class="customers_text"><%= customer.introduction %></p>
+      <p class="customers_text"><%= truncate(customer.introduction, length: 78) %></p>
   </li>
   <% end %>
 </ul>

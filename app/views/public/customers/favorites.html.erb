@@ -1,3 +1,7 @@
 <h3 class="page_title">いいね</h3>
 
-<%= render partial: 'public/posts/list', locals: { posts: @favorite_posts } %>
+<% if @favorite_posts.present? %>
+  <%= render partial: 'public/posts/list', locals: { posts: @favorite_posts } %>
+<% else %>
+  <p class="no_customer">まだいいねをしていません</p>
+<% end %>
