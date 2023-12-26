@@ -1,18 +1,8 @@
 <h3 class="page_title">画像を投稿する</h3>
 <div class="contents_padding">
+  
   <!--フラッシュメッセージ-->
-  <div class="message-container">
-    <% if flash[:danger].present? %>
-      <div class="message">
-        <%= flash[:danger] %>
-      </div>
-    <% end %>
-    <% if flash[:notice].present? %>
-      <div class="message">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-  </div>
+  <%= render '/public/homes/message' %>
 
   <!--投稿フォーム-->
   <div class="post_form_wrap">

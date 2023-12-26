@@ -1,0 +1,13 @@
+<!--フラッシュメッセージ-->
+<div class="message-container">
+  <% if flash[:danger].present? %>
+    <div class="message">
+      <%= flash[:danger] %>
+    </div>
+  <% end %>
+  <% if flash[:notice].present? %>
+    <div class="message">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+</div>

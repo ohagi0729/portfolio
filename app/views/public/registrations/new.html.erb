@@ -1,18 +1,8 @@
 <h3 class="page_title">新規登録</h3>
 <div class="contents_padding">
+
   <!--フラッシュメッセージ-->
-  <div class="message-container">
-    <% if flash[:danger].present? %>
-      <div class="message">
-        <%= flash[:danger] %>
-      </div>
-    <% end %>
-    <% if flash[:notice].present? %>
-      <div class="message">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-  </div>
+  <%= render '/public/homes/message' %>
 
   <!--新規登録フォーム-->
   <div class="sinup_form_wrap">

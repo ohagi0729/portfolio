@@ -1,17 +1,6 @@
 <h3 class="page_title">会員一覧（管理用）</h3>
 
 <!--フラッシュメッセージ-->
-<div class="message-container">
-  <% if flash[:danger].present? %>
-    <div class="message">
-      <%= flash[:danger] %>
-    </div>
-  <% end %>
-  <% if flash[:notice].present? %>
-    <div class="message">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
-</div>
+<%= render '/public/homes/message' %>
 
 <%= render 'list',customers: @customers %>

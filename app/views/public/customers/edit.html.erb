@@ -1,18 +1,8 @@
 <h3 class="page_title">プロフィールを編集する</h3>
 <div class="contents_padding">
+  
   <!--フラッシュメッセージ-->
-  <div class="message-container">
-    <% if flash[:danger].present? %>
-      <div class="message">
-        <%= flash[:danger] %>
-      </div>
-    <% end %>
-    <% if flash[:notice].present? %>
-      <div class="message">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-  </div>
+  <%= render '/public/homes/message' %>
 
   <!--編集フォーム-->
   <div class="prf_form_wrap">

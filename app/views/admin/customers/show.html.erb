@@ -1,18 +1,7 @@
 <div class="profile_bg">
 
 <!--フラッシュメッセージ-->
-<div class="message-container">
-  <% if flash[:danger].present? %>
-    <div class="message">
-      <%= flash[:danger] %>
-    </div>
-  <% end %>
-  <% if flash[:notice].present? %>
-    <div class="message">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
-</div>
+<%= render '/public/homes/message' %>
 
   <div class="profile">
       <div class="icon_neme_customer">
