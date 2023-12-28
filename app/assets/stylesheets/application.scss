@@ -14,7 +14,8 @@
  *= require_self
  */
 
-/*リセットCSS*/
+
+/*リセットCSS------------------------------*/
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +28,8 @@
   line-height: 1;
 }
 
- body {
+
+  body {
    display: flex;
    flex-direction: column;
    min-height: 100vh;
@@ -57,14 +59,16 @@ footer {
    margin-top: auto;
 }
 
-.page_title {
+
+/*共通CSS----------------------------------*/
+.page_title {  /*ページタイトル*/
   font-size: 36px;
   font-weight: bold;
   text-align: center;
   margin: 120px 0 38px 0;
 }
 
-.btn_y {
+.btn_y {  /*イエローボタン*/
   width: 168px;
   height: 40px;
   display: inline-block;
@@ -77,7 +81,7 @@ footer {
   cursor: pointer;
 }
 
-.btn_y_s {
+.btn_y_s {  /*イエローボタン小*/
   width: 100px;
   height: 30px;
   display: inline-block;
@@ -90,7 +94,7 @@ footer {
   cursor: pointer;
 }
 
-.btn_y_ss {
+.btn_y_ss {  /*イエローボタン極小*/
   width: 80px;
   height: 30px;
   display: inline-block;
@@ -102,7 +106,7 @@ footer {
   font-weight: bold;
 }
 
-.btn_g {
+.btn_g {  /*グレーボタン*/
   width: 168px;
   height: 40px;
   margin-right: 20px;
@@ -116,7 +120,7 @@ footer {
   cursor: pointer;
 }
 
-.btn_g_s {
+.btn_g_s {  /*グレーボタン小*/
   width: 100px;
   height: 30px;
   display: inline-block;
@@ -129,7 +133,7 @@ footer {
   cursor: pointer;
 }
 
-.btn_g_ss {
+.btn_g_ss {  /*グレーボタン極小*/
   width: 80px;
   height: 30px;
   display: inline-block;
@@ -141,7 +145,7 @@ footer {
   font-weight: bold;
 }
 
-.post_btn {
+.post_btn {  /*新規投稿ボタン*/
   width: 60px;
   height: 60px;
   margin-bottom: 10px;
@@ -155,20 +159,48 @@ footer {
   cursor: pointer;
 }
 
-.top_btn {
+.top_btn {  /*トップへ戻るボタン*/
   width: 60px;
   display: block;
   cursor: pointer;
 }
 
-.bottom_btn {
+.bottom_btn {  /*トップへ戻る、新規投稿ボタン位置設定*/
   position: fixed;
   bottom: 10px;
   right: 10px;
 }
 
-/*headerナビゲーション部分*/
-.global_nav {
+.contents_padding {  /*コンテンツ左右アキ設定*/
+  padding: 0 20px;
+}
+
+.message-container {  /*フラッシュメッセージ部分*/
+  text-align: center;
+}
+
+.message {
+  display: inline-block;
+  padding: 8px 40px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  background-color: #ffea00;
+}
+
+
+/*headerナビゲーション部分-----------------*/
+.header_logo a {  /*ロゴ部分*/
+  width: 186px;
+  display: block;
+cursor: pointer;
+}
+
+.header_logo a img {
+  width: 100%;
+}
+
+.global_nav {  /*検索、一覧リンク、ログインボタン、アイコン部分*/
   margin-left: auto;
   font-weight: bold;
 }
@@ -191,17 +223,7 @@ footer {
   line-height: 40px;
 }
 
-.header_logo a {
-  width: 186px;
-  display: block;
-cursor: pointer;
-}
-
-.header_logo a img {
-  width: 100%;
-}
-
-.search_form {  /*検索フォーム外枠*/
+.search_form {  /*検索フォーム外枠部分*/
   height: 40px;
   width: 462px;
   margin: 0 auto;
@@ -228,10 +250,6 @@ cursor: pointer;
   outline: none;
 }
 
-.search_btn {
-  margin-right: 10px;
-}
-
 .search_form input[type="text"] {  /*検索フォーム入力部分*/
   width: 216px;
   background-color: #fff;
@@ -253,21 +271,25 @@ cursor: pointer;
   cursor: pointer;
 }
 
-.profile_img_s img {  /*アイコン部分*/
-  width: 35px;
-  height: 35px;
-  object-fit: cover;
-  object-position: center center;
-  border-radius: 50%;
+.search_btn {
+  margin-right: 10px;
 }
 
-.header_btn {
+.header_btn {  /*ログインボタン部分*/
   width: 140px;
   height: 40px;
   display: inline-block;
   text-align: center;
   border: 1px solid #e6e6e6;
   border-radius: 20px;
+}
+
+.profile_img_s img {  /*アイコン部分*/
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 50%;
 }
 
 .hm_btn {  /*ハンバーガーアイコンPC版では消しておく*/
@@ -278,25 +300,8 @@ cursor: pointer;
   display: none;
 }
 
-.contents_padding {
-  padding: 0 20px;
-}
 
-/*フラッシュメッセージ部分*/
-.message-container {
-  text-align: center;
-}
-
-.message {
-  display: inline-block;
-  padding: 8px 40px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  font-weight: bold;
-  background-color: #ffea00;
-}
-
-/*トップページ部分*/
+/*トップページ部分-------------------------*/
 .mv_bg {
   width: 100%;
   height: calc(100vh - 30px);
@@ -381,7 +386,111 @@ cursor: pointer;
   font-weight: bold;
 }
 
-/*投稿一覧部分*/
+
+/*新規登録フォーム部分---------------------*/
+.sinup_form_wrap {
+  max-width: 800px;
+  padding: 40px;
+  margin: 0 auto;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
+}
+
+.sinup_form_flex {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.sinup_form_flex p {
+  width: 150px;
+  font-weight: bold;
+}
+
+.sinup_form_control {
+  width: 300px;
+  height: 30px;
+  padding: 8px 10px;
+  border: 1px solid #e6e6e6;
+}
+
+.sinup_form_flex_last {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.sinup_form_flex_last p {
+  width: 150px;
+  font-weight: bold;
+}
+
+.sinup_form_flex_btn {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.post_form_error {
+  width: 800px;
+  margin: 0 auto 40px;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+
+/*ログインフォーム部分---------------------*/
+.login_form_wrap {
+  max-width: 800px;
+  padding: 40px;
+  margin: 0 auto;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
+}
+
+.login_form_flex {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content:center
+}
+
+.login_form_flex p {
+  width: 150px;
+  font-weight: bold;
+}
+
+.login_form_control {
+  width: 300px;
+  height: 30px;
+  padding: 8px 10px;
+  border: 1px solid #e6e6e6;
+}
+
+.login_form_flex_last {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.login_form_flex_last p {
+  width: 150px;
+  font-weight: bold;
+}
+
+.login_form_flex_btn {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+
+/*投稿一覧部分-----------------------------*/
 .post_wrap {
   max-width: 1020px;
   margin: 0 auto 40px;
@@ -471,7 +580,8 @@ cursor: pointer;
   line-height: 25px;
 }
 
-/*投稿詳細部分*/
+
+/*投稿詳細部分-----------------------------*/
 .post_show {
   max-width: 600px;
   margin: 120px auto 40px;
@@ -530,110 +640,8 @@ cursor: pointer;
   font-size: 14px;
 }
 
-/*新規登録フォーム部分*/
-.sinup_form_wrap {
-  max-width: 800px;
-  padding: 40px;
-  margin: 0 auto;
-  border-radius: 6px;
-  border: 1px solid #e6e6e6;
-}
 
-.sinup_form_flex {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content:center;
-}
-
-.sinup_form_flex p {
-  width: 150px;
-  font-weight: bold;
-}
-
-.sinup_form_control {
-  width: 300px;
-  height: 30px;
-  padding: 8px 10px;
-  border: 1px solid #e6e6e6;
-}
-
-.sinup_form_flex_last {
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  justify-content:center;
-}
-
-.sinup_form_flex_last p {
-  width: 150px;
-  font-weight: bold;
-}
-
-.sinup_form_flex_btn {
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content:center;
-}
-
-.post_form_error {
-  width: 800px;
-  margin: 0 auto 40px;
-  font-weight: bold;
-  line-height: 30px;
-}
-
-
-/*ログインフォーム部分*/
-.login_form_wrap {
-  max-width: 800px;
-  padding: 40px;
-  margin: 0 auto;
-  border-radius: 6px;
-  border: 1px solid #e6e6e6;
-}
-
-.login_form_flex {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content:center
-}
-
-.login_form_flex p {
-  width: 150px;
-  font-weight: bold;
-}
-
-.login_form_control {
-  width: 300px;
-  height: 30px;
-  padding: 8px 10px;
-  border: 1px solid #e6e6e6;
-}
-
-.login_form_flex_last {
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  justify-content:center;
-}
-
-.login_form_flex_last p {
-  width: 150px;
-  font-weight: bold;
-}
-
-.login_form_flex_btn {
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content:center;
-}
-
-
-/*投稿フォーム部分*/
+/*投稿フォーム部分-------------------------*/
 .post_form_wrap {
   max-width: 800px;
   padding: 40px;
@@ -686,7 +694,7 @@ cursor: pointer;
 }
 
 
-/*会員一覧部分*/
+/*会員一覧部分-----------------------------*/
 .customers_list {
   margin: 0 auto 40px;
   padding: 0 20px;
@@ -729,7 +737,8 @@ cursor: pointer;
   text-align: center;
 }
 
-/*会員詳細部分*/
+
+/*会員詳細部分-----------------------------*/
 .profile_bg {
   width: 100%;
   padding: 120px 20px 40px;
@@ -795,7 +804,8 @@ cursor: pointer;
   text-align: center;
 }
 
-/*プロフィール編集フォーム*/
+
+/*会員情報編集-----------------------------*/
 .prf_form_wrap {
   max-width: 800px;
   padding: 40px;
@@ -864,7 +874,8 @@ cursor: pointer;
   text-align: center;
 }
 
-/*退会ページ部分*/
+
+/*退会ページ部分---------------------------*/
 .confirm_wrap {
   max-width: 800px;
   padding: 40px 0;
@@ -890,7 +901,8 @@ cursor: pointer;
   justify-content:center;
 }
 
-/*管理者側会員一覧部分*/
+
+/*管理者側会員一覧部分---------------------*/
 .customer_table_sp {
   display: none;
 }
@@ -934,7 +946,8 @@ cursor: pointer;
   text-align: center;
 }
 
-/*フッター部分*/
+
+/*フッター部分-----------------------------*/
 #footer {
   height: 30px;
   text-align: center;
@@ -979,7 +992,8 @@ cursor: pointer;
     display: none;
   }
 
-  /*ハンバーガーアイコン*/
+
+/*ハンバーガーアイコン---------------------*/
   .hm_btn {
     position: fixed;
     right: 85px;
@@ -1032,7 +1046,8 @@ cursor: pointer;
     height: 35px;
   }
 
-  /* spメニュー*/
+
+/* spメニュー------------------------------*/
   .sp_serach {
     display: none;
   }
@@ -1078,17 +1093,18 @@ cursor: pointer;
   }
 }
 
+
 @media screen and (max-width: 1039px) {
 
   .post_wrap {
     max-width: 680px;
   }
-
 }
 
 
 @media screen and (max-width: 719px) {
 
+/* spメニュー------------------------------*/
   .sp-menu {
     height: 360px;
   }
@@ -1158,7 +1174,8 @@ cursor: pointer;
     width: 160px;
   }
 
-  /*トップページ部分*/
+
+/*トップページ部分-------------------------*/
   .top_text_wrap {
     padding: 40px;
     margin-top: 40px;
@@ -1196,7 +1213,7 @@ cursor: pointer;
   }
 
 
-    /*会員詳細部分*/
+/*会員詳細部分-----------------------------*/
   .profile_bg {
     padding: 90px 20px 40px;
   }
@@ -1213,58 +1230,60 @@ cursor: pointer;
     display: block;
   }
 
-/*新規登録フォーム部分*/
-.sinup_form_wrap {
-  padding: 40px 20px;
-}
 
-.sinup_form_flex {
-  display: block;
-  max-width: 300px;
-  margin: 0 auto 20px;
-}
+/*新規登録フォーム部分---------------------*/
+  .sinup_form_wrap {
+    padding: 40px 20px;
+  }
 
-.sinup_form_flex p {
-  margin-bottom: 10px;
-}
+  .sinup_form_flex {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
 
-.sinup_form_flex_last {
-  display: block;
-  max-width: 300px;
-  margin: 0 auto 40px;
-}
+  .sinup_form_flex p {
+    margin-bottom: 10px;
+  }
 
-.sinup_form_flex_last p {
-  margin-bottom: 10px;
-}
+  .sinup_form_flex_last {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto 40px;
+  }
 
-  /*ログインフォーム部分*/
-.login_form_wrap {
-  padding: 40px 20px;
-}
-
-.login_form_flex {
-  display: block;
-  max-width: 300px;
-  margin: 0 auto 20px;
-}
-
-.login_form_flex p {
-  margin-bottom: 10px;
-}
-
-.login_form_flex_last {
-  display: block;
-  max-width: 300px;
-  margin: 0 auto 40px;
-}
-
-.login_form_flex_last p {
-  margin-bottom: 10px;
-}
+  .sinup_form_flex_last p {
+    margin-bottom: 10px;
+  }
 
 
-  /*投稿フォーム部分*/
+/*ログインフォーム部分---------------------*/
+  .login_form_wrap {
+    padding: 40px 20px;
+  }
+
+  .login_form_flex {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+
+  .login_form_flex p {
+    margin-bottom: 10px;
+  }
+
+  .login_form_flex_last {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto 40px;
+  }
+
+  .login_form_flex_last p {
+    margin-bottom: 10px;
+  }
+
+
+/*投稿フォーム部分-------------------------*/
   .post_form_wrap {
     padding: 40px 20px;
   }
@@ -1304,7 +1323,7 @@ cursor: pointer;
   }
 
 
-  /*プロフィール編集フォーム*/
+/*プロフィール編集フォーム-----------------*/
   .prf_form_wrap {
     padding: 40px 20px;
   }
@@ -1348,24 +1367,25 @@ cursor: pointer;
   }
 
 
-  /*退会ページ部分*/
+/*退会ページ部分---------------------------*/
   .confirm_wrap {
     max-width: 800px;
     padding: 40px 20px;
   }
 
-  /*管理者側会員一覧部分*/
+
+/*管理者側会員一覧部分---------------------*/
   .customer_table {
     display: none;
     margin: 0 auto;
   }
 
   .customer_table_sp {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
-  margin: 0 auto 40px auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 40px auto;
   }
 
   .customer_table_sp th ,.customer_table_sp td {
@@ -1401,5 +1421,4 @@ cursor: pointer;
     width: 20%;
     text-align: center;
   }
-
 }
