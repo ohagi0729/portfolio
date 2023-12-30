@@ -9,7 +9,7 @@
       <li class="pc_serach"><%= render "/public/searches/serach" %></li>
       <li class="pc_nav nav_underbar"><%= link_to "投稿一覧", public_posts_path %></li>
       <li class="pc_nav nav_underbar"><%= link_to "会員一覧", public_customers_path %></li>
-      <li class="pc_nav"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'header_btn' %></li>
+      <li class="pc_nav"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'header_btn_g' %></li>
       <li class="hm_btn sp_nav">
         <a class="menu-trigger" href="#">
           <span></span>
@@ -27,7 +27,7 @@
       <li class="pc_serach"><%= render "/admin/searches/serach" %></li>
       <li class="pc_nav nav_underbar"><%= link_to "投稿一覧", public_posts_path %></li>
       <li class="pc_nav nav_underbar"><%= link_to "会員一覧", admin_customers_path %></li>
-      <li class="pc_nav"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, url: admin_session_path, class: 'header_btn' %></li>
+      <li class="pc_nav"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, url: admin_session_path, class: 'header_btn_g' %></li>
       <li class="hm_btn sp_nav">
         <a class="menu-trigger" href="#">
           <span></span>
@@ -40,8 +40,8 @@
       <li class="pc_serach"><%= render "/public/searches/serach" %></li>
       <li class="pc_nav nav_underbar"><%= link_to "投稿一覧", public_posts_path %></li>
       <li class="pc_nav nav_underbar"><%= link_to "会員一覧", public_customers_path %></li>
-      <li class="pc_nav"><%= link_to "新規登録", new_customer_registration_path, class: 'header_btn' %></li>
-      <li class="pc_nav"><%= link_to "ログイン", new_customer_session_path, class: 'header_btn' %></li>
+      <li class="pc_nav"><%= link_to "新規登録", new_customer_registration_path, class: 'header_btn_h' %></li>
+      <li class="pc_nav"><%= link_to "ログイン", new_customer_session_path, class: 'header_btn_y' %></li>
       <li class="hm_btn sp_nav">
         <a class="menu-trigger" href="#">
           <span></span>
@@ -60,21 +60,23 @@
       <li class="sp_menu_border nav_underbar"><%= link_to "投稿一覧", public_posts_path %></li>
       <li class="sp_menu_border nav_underbar"><%= link_to "会員一覧", public_customers_path %></li>
       <li class="sp_menu_border sp_menu_serach"><%= render "public/searches/serach" %></li>
-      <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'header_btn' %></li>
+      <div class="login_form_flex_btn">
+        <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'header_btn_g' %></li>
+      </div>
     <% elsif admin_signed_in? %>
       <!-- 管理者ログイン時 -->
       <li class="sp_menu_border nav_underbar"><%= link_to "投稿一覧", public_posts_path %></li>
       <li class="sp_menu_border nav_underbar"><%= link_to "会員一覧", admin_customers_path %></li>
       <li class="sp_menu_border sp_menu_serach"><%= render "public/searches/serach" %></li>
-      <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, url: admin_session_path, class: 'header_btn' %></li>
+      <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, url: admin_session_path, class: 'header_btn_g' %></li>
     <% else %>
       <!-- ログアウト時 -->
       <li class="sp_menu_border nav_underbar"><%= link_to "投稿一覧", public_posts_path %></li>
       <li class="sp_menu_border nav_underbar"><%= link_to "会員一覧", public_customers_path %></li>
       <li class="sp_menu_border sp_menu_serach"><%= render "/public/searches/serach" %></li>
       <div class="login_form_flex_btn">
-        <li><%= link_to "新規登録", new_customer_registration_path, class: 'header_btn' %></li>
-        <li><%= link_to "ログイン", new_customer_session_path, class: 'header_btn login_btn' %></li>
+        <li><%= link_to "新規登録", new_customer_registration_path, class: 'header_btn_h' %></li>
+        <li><%= link_to "ログイン", new_customer_session_path, class: 'header_btn_y login_btn' %></li>
       </div>
     <% end %>
   </ul>

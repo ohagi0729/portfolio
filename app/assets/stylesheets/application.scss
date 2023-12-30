@@ -73,7 +73,7 @@ footer {
   height: 40px;
   display: inline-block;
   text-align: center;
-  line-height: 40px;
+  line-height: 30px;
   background-color: #ffea00;
   border: 1px solid #ffea00;
   border-radius: 20px;
@@ -90,7 +90,7 @@ footer {
   height: 30px;
   display: inline-block;
   text-align: center;
-  line-height: 30px;
+  line-height: 27px;
   background-color: #ffea00;
   border: 1px solid #ffea00;
   border-radius: 20px;
@@ -124,7 +124,7 @@ footer {
   margin-right: 20px;
   display: inline-block;
   text-align: center;
-  line-height: 40px;
+  line-height: 37px;
   background-color: #e6e6e6;
   border: 1px solid #e6e6e6;
   border-radius: 20px;
@@ -304,17 +304,45 @@ cursor: pointer;
   border-bottom: 3px solid #ffea00;
 }
 
-.header_btn {  /*ログインボタン部分*/
+.header_btn_y {  /*ログインボタン部分*/
   width: 140px;
   height: 40px;
   display: inline-block;
   text-align: center;
+  background-color: #ffea00;
+  border: 1px solid #ffea00;
+  border-radius: 20px;
+}
+
+.header_btn_y:hover {
+  background-color: #fff;
+}
+
+.header_btn_h {
+  width: 140px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #ffea00;
+  border-radius: 20px;
+}
+
+.header_btn_h:hover {
+  background-color: #ffea00;
+}
+
+.header_btn_g {
+  width: 140px;
+  height: 40px;
+  display: inline-block;
+  text-align: center;
+  background-color: #e6e6e6;
   border: 1px solid #e6e6e6;
   border-radius: 20px;
 }
 
-.header_btn:hover {
-  background-color: #e6e6e6;
+.header_btn_g:hover {
+  background-color: #fff;
 }
 
 .profile_img_s img {  /*アイコン部分*/
@@ -323,6 +351,10 @@ cursor: pointer;
   object-fit: cover;
   object-position: center center;
   border-radius: 50%;
+}
+
+.profile_img_s img:hover {
+  border: 2px solid #ffea00;
 }
 
 .hm_btn {  /*ハンバーガーアイコンPC版では消しておく*/
@@ -398,15 +430,15 @@ cursor: pointer;
   display: inline-block;
   text-align: center;
   line-height: 40px;
-  background-color: #e6e6e6;
-  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  border: 1px solid #ffea00;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
 }
 
 .btn_g_top:hover {
-  background-color: #fff;
+  background-color: #ffea00;
 }
 
 .btn_y_top {
@@ -564,6 +596,10 @@ cursor: pointer;
   object-fit: cover;
   object-position: center center;
   border-radius: 6px 6px 0 0;
+}
+
+.post_img:hover {
+  opacity: 0.5;
 }
 
 .post_text {
