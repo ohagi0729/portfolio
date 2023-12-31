@@ -75,14 +75,15 @@ footer {
   text-align: center;
   line-height: 30px;
   background-color: #ffea00;
-  border: 1px solid #ffea00;
+  border: 2px solid #ffea00;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
 }
 
 .btn_y:hover {
-  background-color: #fff;
+  background-color: #e6d200;
+  border: 2px solid #e6d200;
 }
 
 .btn_y_s {  /*イエローボタン小*/
@@ -90,16 +91,15 @@ footer {
   height: 30px;
   display: inline-block;
   text-align: center;
-  line-height: 27px;
+  line-height: 30px;
   background-color: #ffea00;
-  border: 1px solid #ffea00;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
 }
 
 .btn_y_s:hover {
-  background-color: #fff;
+  background-color: #e6d200;
 }
 
 .btn_y_ss {  /*イエローボタン極小*/
@@ -109,13 +109,12 @@ footer {
   text-align: center;
   line-height: 30px;
   background-color: #ffea00;
-  border: 1px solid #ffea00;
   border-radius: 20px;
   font-weight: bold;
 }
 
 .btn_y_ss:hover {
-  background-color: #fff;
+  background-color: #e6d200;
 }
 
 .btn_g {  /*グレーボタン*/
@@ -124,16 +123,15 @@ footer {
   margin-right: 20px;
   display: inline-block;
   text-align: center;
-  line-height: 37px;
+  line-height: 40px;
   background-color: #e6e6e6;
-  border: 1px solid #e6e6e6;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
 }
 
 .btn_g:hover {
-  background-color: #fff;
+  background-color: #ccc;
 }
 
 .btn_g_s {  /*グレーボタン小*/
@@ -143,14 +141,13 @@ footer {
   text-align: center;
   line-height: 30px;
   background-color: #e6e6e6;
-  border: 1px solid #e6e6e6;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
 }
 
 .btn_g_s:hover {
-  background-color: #fff;
+  background-color: #ccc;
 }
 
 .btn_g_ss {  /*グレーボタン極小*/
@@ -160,13 +157,12 @@ footer {
   text-align: center;
   line-height: 30px;
   background-color: #e6e6e6;
-  border: 1px solid #e6e6e6;
   border-radius: 20px;
   font-weight: bold;
 }
 
 .btn_g_ss:hover {
-  background-color: #fff;
+  background-color: #ccc;
 }
 
 .post_btn {  /*新規投稿ボタン*/
@@ -181,6 +177,10 @@ footer {
   border-radius: 50%;
   background-color: #ffea00;
   cursor: pointer;
+}
+
+.post_btn:hover {
+  background-color: #e6d200;
 }
 
 .top_btn {  /*トップへ戻るボタン*/
@@ -310,12 +310,11 @@ cursor: pointer;
   display: inline-block;
   text-align: center;
   background-color: #ffea00;
-  border: 1px solid #ffea00;
   border-radius: 20px;
 }
 
 .header_btn_y:hover {
-  background-color: #fff;
+  background-color: #e6d200;
 }
 
 .header_btn_h {
@@ -323,12 +322,16 @@ cursor: pointer;
   height: 40px;
   display: inline-block;
   text-align: center;
-  border: 1px solid #ffea00;
+  line-height: 35px;
+  background-color: #fff;
+  border: 2px solid #ffea00;
   border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .header_btn_h:hover {
-  background-color: #ffea00;
+  background-color: #e6d200;
 }
 
 .header_btn_g {
@@ -337,12 +340,11 @@ cursor: pointer;
   display: inline-block;
   text-align: center;
   background-color: #e6e6e6;
-  border: 1px solid #e6e6e6;
   border-radius: 20px;
 }
 
 .header_btn_g:hover {
-  background-color: #fff;
+  background-color: #ccc;
 }
 
 .profile_img_s img {  /*アイコン部分*/
@@ -423,22 +425,22 @@ cursor: pointer;
   justify-content:center;
 }
 
-.btn_g_top {
+.btn_h_top {
   width: 168px;
   height: 40px;
   margin-right: 20px;
   display: inline-block;
   text-align: center;
-  line-height: 40px;
+  line-height: 35px;
   background-color: #fff;
-  border: 1px solid #ffea00;
+  border: 2px solid #ffea00;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
 }
 
-.btn_g_top:hover {
-  background-color: #ffea00;
+.btn_h_top:hover {
+  background-color: #e6d200;
 }
 
 .btn_y_top {
@@ -448,14 +450,13 @@ cursor: pointer;
   text-align: center;
   line-height: 40px;
   background-color: #ffea00;
-  border: 1px solid #ffea00;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
 }
 
 .btn_y_top:hover {
-  background-color: #fff;
+  background-color: #e6d200;
 }
 
 .guestlogin {

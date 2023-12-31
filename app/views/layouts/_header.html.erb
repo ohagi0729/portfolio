@@ -68,7 +68,9 @@
       <li class="sp_menu_border nav_underbar"><%= link_to "投稿一覧", public_posts_path %></li>
       <li class="sp_menu_border nav_underbar"><%= link_to "会員一覧", admin_customers_path %></li>
       <li class="sp_menu_border sp_menu_serach"><%= render "public/searches/serach" %></li>
-      <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, url: admin_session_path, class: 'header_btn_g' %></li>
+      <div class="login_form_flex_btn">
+        <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, url: admin_session_path, class: 'header_btn_g' %></li>
+      </div>
     <% else %>
       <!-- ログアウト時 -->
       <li class="sp_menu_border nav_underbar"><%= link_to "投稿一覧", public_posts_path %></li>
