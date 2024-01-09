@@ -1,6 +1,6 @@
-<div class="post_wrap">
+<ul class="post_wrap">
   <% posts.each do |post| %>
-    <div class="post">
+    <li class="post">
       <!--会員アイコン-->
       <%= link_to public_post_path(post.id) do %>
         <%= image_tag post.image, class: 'post_img' %>
@@ -46,9 +46,9 @@
           <% end %>
         </div>
       </div>
-    </div>
+    </li>
   <% end %>
-</div>
+</ul>
 
 <!--新規投稿ボタン、トップへ戻るボタン-->
 <div class="bottom_btn">
