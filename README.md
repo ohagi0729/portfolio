@@ -23,6 +23,8 @@
 ## 設計書
 - 遷移図、ER図：https://app.diagrams.net/#G1TKTJjbKQfva-nR87xxsK82IXDpbspIWI
 - アプリケーション詳細設計書：https://docs.google.com/spreadsheets/d/116_FitFi6jftHN5WHxrCxt7H0hqyBbPDhWkF44xQzHE/edit#gid=549108681
+- AWS構成図：https://app.diagrams.net/#G1ONPHE8ufe2GlOj1v0XewOSBWcEk09gZN
+- AWSインフラ設計書：https://docs.google.com/spreadsheets/d/1VFdTQ8NNkxc_wC5luglFP0oS3-SPE4xiGwe0LnODACg/edit#gid=0
 ​
 ## 開発環境
 - OS：Linux(CentOS)
