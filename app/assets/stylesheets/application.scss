@@ -94,6 +94,7 @@ footer {
   line-height: 30px;
   background-color: #ffea00;
   border-radius: 20px;
+  border: 0px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -379,6 +380,10 @@ cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.bg_img_1 {
+
 }
 
 .top_text_wrap {
