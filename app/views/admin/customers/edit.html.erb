@@ -31,12 +31,17 @@
     <div class="prf_form_flex_sta">
       <p>会員ステータス</p>
       <div>
-        <%= f.radio_button :is_active, true %><%= f.label :is_active, "有効　 " %>
-        <%= f.radio_button :is_active, false %><%= f.label :is_active, "退会" %>
+        <%= f.label :is_active_true, for: "is_active_true", class: "prf_form_control_act" do %>
+          <%= f.radio_button :is_active, true, id: "is_active_true" %> 有効
+        <% end %>
+        <span class="prf_form_control_spa"></span>
+        <%= f.label :is_active_false, for: "is_active_false", class: "prf_form_control_act" do %>
+          <%= f.radio_button :is_active, false, id: "is_active_false" %> 退会
+        <% end %>
       </div>
     </div>
 
-  <!--更新、キャンセルボタン-->
+    <!--更新、キャンセルボタン-->
     <div class="prf_form_flex_btn">
       <%= link_to  'キャンセル',admin_customer_path(@customer), class: 'btn_g' %>
       <%= f.submit '更新する', class: 'btn_y' %>
